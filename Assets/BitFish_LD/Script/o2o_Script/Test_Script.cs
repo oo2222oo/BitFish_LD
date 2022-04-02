@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test_Script : MonoBehaviour
+public class Test_Script : Event_interface
 {
-    // Start is called before the first frame update
-    void Start()
+    bool onekSb;
+    public Test_Script(bool onekSb)
     {
-        Debug.Log("1ksb");
+        this.onekSb = onekSb;
+    }
+    public void Event()
+    {
+        Debug.Log("1ksb? " + onekSb);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
 }
