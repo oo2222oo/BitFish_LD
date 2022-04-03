@@ -9,7 +9,7 @@ public class Player_Controller : MonoBehaviour
     private Animator anim;
 
     public float speed, jumpForce;
-    private float horizontalMove;
+    private float horizontalMove,dashMove;
     public Transform groundCheck;
     public LayerMask ground;
 
@@ -67,7 +67,7 @@ public class Player_Controller : MonoBehaviour
         {
             if (alarm[2] == 0f)
             {
-                alarm[2] = 0.075f;
+                alarm[2] = 0.1f;
             }
             if (alarm[2] < 0)
             {
@@ -96,7 +96,19 @@ public class Player_Controller : MonoBehaviour
     void GroundMovement()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");//Ö»·µ»Ø-1£¬0£¬1
-        rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+        dashMove = Input.GetAxisRaw("Fire3");
+        if (dashMove == 1 && alarm[3]<=0)
+        {
+            alarm[3] = 1f;
+        }
+        if (alarm[3] > 0.9f)
+        {
+            rb.velocity = new Vector2(horizontalMove * speed * 3, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+        }
 
         if (horizontalMove != 0)
         {
