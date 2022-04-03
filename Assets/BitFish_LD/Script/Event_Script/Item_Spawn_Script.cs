@@ -24,10 +24,13 @@ public class Item_Spawn_Script : MonoBehaviour
         
         if (Item_Data!=null)
         {
-            Vector2 targetDir = (Game_Manager_Script.Player.transform.position - transform.position).normalized; // 目标坐标与当前坐标差的向量
-            Vector2 targetSetDis = targetDir*100;
-            Show_UI.transform.position = new Vector2(Show_UI.transform.position.x + targetSetDis.x, Show_UI.transform.position.y + targetSetDis.y);
 
+            Vector2 targetDir = (Game_Manager_Script.Player.transform.position - transform.position).normalized; // 目标坐标与当前坐标差的向量
+            Vector2 targetSetDis = targetDir*1f;
+            float angle = -Mathf.Atan2(targetDir.x, targetDir.y) * Mathf.Rad2Deg+90;
+            Show_UI.transform.position = new Vector2(transform.position.x + targetSetDis.x, transform.position.y + targetSetDis.y);
+            Show_UI.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            Distance =Vector2.Distance(Game_Manager_Script.Player.transform.position,transform.position);
             //道具消失
             Destroy_time -= Time.deltaTime;
             if (Destroy_time <= 0) { 

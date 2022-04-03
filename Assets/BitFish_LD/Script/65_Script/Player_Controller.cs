@@ -22,7 +22,7 @@ public class Player_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-  //      Game_Manager_Script.Player = gameObject;
+        Game_Manager_Script.Player = gameObject;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         Alarm.AlarmInit(alarm);
