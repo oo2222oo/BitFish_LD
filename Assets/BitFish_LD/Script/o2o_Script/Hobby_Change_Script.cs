@@ -14,6 +14,7 @@ public class Hobby_Change_Script : Event_interface
     public void Event()
     {
         Game_Manager_Script.Hobby_bar += Hobby_add;
+        UI_Manager.Static.Hobby_UI.GetComponent<RectTransform>().localScale=new Vector3(1, Game_Manager_Script.Hobby_bar/1, 1);
     }
 
 }
