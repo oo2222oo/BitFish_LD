@@ -8,26 +8,36 @@ using UnityEngine;
 public class Item_Spawn_Script : MonoBehaviour
 {
     public Item_Data Item_Data; //道具數據
-    public bool is_spawn;   //是否刷新
     public float Destroy_time;  //消失時間
+    public float Distance;  //距離
+    public GameObject Show_UI;  //顯示位置的UI
+    public GameObject Item_obj; //道具
 
 
+    public void Start()
+    {
+        gameObject.SetActive(false);
+
+    }
     public void Update()
     {
         
-        if (is_spawn)
+        if (Item_Data!=null)
         {
+            Vector2 targetDir = (Game_Manager_Script.Player.transform.position - transform.position).normalized; // 目标坐标与当前坐标差的向量
+            Vector2 targetSetDis = targetDir*100;
+            Show_UI.transform.position = new Vector2(Show_UI.transform.position.x + targetSetDis.x, Show_UI.transform.position.y + targetSetDis.y);
 
             //道具消失
             Destroy_time -= Time.deltaTime;
             if (Destroy_time <= 0) { 
-                is_spawn = !is_spawn;
                 Item_Data = null;
+                gameObject.SetActive(false);
             }
         }
     }
 
-    public void Item_Spawn_sc(Item_Data v_item)
+    public void Item_Spawn_sc(Item_Data v_item,float Des_time)
     {
         if (v_item == null) { v_item = Item_Manager.Static.Item_List[Random.Range(0, Item_Manager.Static.Item_List.Count)]; }
         bool v_ok=false;
@@ -48,6 +58,8 @@ public class Item_Spawn_Script : MonoBehaviour
             }
         }
         Item_Data = v_item;
+        Destroy_time = Des_time;
+        gameObject.SetActive(true);
 
     }
 
