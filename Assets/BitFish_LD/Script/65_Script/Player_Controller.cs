@@ -6,7 +6,7 @@ public class Player_Controller : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Collider2D coll;
-//    private Animator anim;
+    private Animator anim;
 
     public float speed, jumpForce;
     private float horizontalMove;
@@ -28,13 +28,14 @@ public class Player_Controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         Alarm.AlarmInit(alarm);
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Alarm.AlarmSet(alarm);
+        anim.SetFloat("yspeed", rb.velocity.y);
         if (Input.GetButtonDown("Jump") && jumpCount > 0)
         {
             jumpPressed = true;
@@ -54,6 +55,23 @@ public class Player_Controller : MonoBehaviour
             if (bc != null)
             {
                 bc.Move(direction, 50f);
+            }
+        }
+        if (horizontalMove != 0 && !isHurt)
+        {
+            alarm[2] = 0f;
+            anim.SetBool("moving", true);
+            transform.localScale = new Vector3(horizontalMove, 1, 1);
+        }
+        else
+        {
+            if (alarm[2] == 0f)
+            {
+                alarm[2] = 0.075f;
+            }
+            if (alarm[2] < 0)
+            {
+                anim.SetBool("moving", false);
             }
         }
     }
@@ -96,6 +114,7 @@ public class Player_Controller : MonoBehaviour
         }
         if (jumpPressed && isGround)
         {
+            anim.SetTrigger("jumping");
             isJump = true;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpCount--;
