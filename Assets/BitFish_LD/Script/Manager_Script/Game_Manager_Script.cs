@@ -8,6 +8,8 @@ using UnityEngine;
 
 public static class Game_Manager_Script
 {
+    public static GameObject Player;    //玩家
+
     public static float Player_HP,Player_HP_Max;    //玩家血量  血量上限
     public static float Bullet_Count, Bullet_Count_Max; //子彈量   子彈量上限
     public static float Hobby_bar, Hobby_bar_Max;   //興趣條   興趣條上限
