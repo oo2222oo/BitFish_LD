@@ -271,10 +271,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1120742453, guid: 3873b02a257f8fa42895be709b708824, type: 3}
-      propertyPath: jumpForce
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 6221170057757669178, guid: 3873b02a257f8fa42895be709b708824, type: 3}
       propertyPath: m_Name
       value: ink
@@ -528,25 +524,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_1
       objectReference: {fileID: 0}
-    - target: {fileID: 2254051469338728889, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254051469338728892, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}
-      propertyPath: m_LinearDrag
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2254051469338728894, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2254051469338728894, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.704
+      value: 2.34
       objectReference: {fileID: 0}
     - target: {fileID: 2254051469338728894, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.661
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 2254051469338728894, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}
       propertyPath: m_LocalPosition.z
