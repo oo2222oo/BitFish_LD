@@ -13,36 +13,51 @@ public class Player_Controller : MonoBehaviour
     public Transform groundCheck;
     public LayerMask ground;
 
-    public bool isGround, isJump, isDashing;
+    public bool isGround, isJump, isDashing, isHurt, canHurt;
 
     bool jumpPressed;
     int jumpCount;
+    public float[] alarm = new float[5];
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+  //      Game_Manager_Script.Player = gameObject;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
-//        anim = GetComponent<Animator>();
+        Alarm.AlarmInit(alarm);
+        //anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Alarm.AlarmSet(alarm);
         if (Input.GetButtonDown("Jump") && jumpCount > 0)
         {
             jumpPressed = true;
+        }
+        if (alarm[0] < 0)
+        {
+            canHurt = true;
         }
     }
 
     private void FixedUpdate()
     {
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground);
-
-        GroundMovement();
-
-        Jump();
-        
+        if (!isHurt)
+        {
+            GroundMovement();
+            Jump();
+        }
+        else
+        {
+            if (Mathf.Abs(rb.velocity.x)+ Mathf.Abs(rb.velocity.y) < 2f && alarm[1]<=0)
+            {
+                isHurt = false;
+            }
+        }
     }
 
     void GroundMovement()
@@ -76,6 +91,24 @@ public class Player_Controller : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpCount--;
             jumpPressed = false;
+        }
+    }
+    //Íæ¼ÒÊÜÉË
+    public void GetHit(float dam, float force, Vector2 dir, Vector2 hitpos)
+    {
+        rb.AddForceAtPosition(dir * force, hitpos);
+    }
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Enemy" && !isHurt && canHurt)
+        {
+            isHurt = true;
+            canHurt = false;
+            alarm[0] = 1f;
+            alarm[1] = 0.3f;
+            Vector2 vec = transform.position - other.collider.transform.position;
+            vec.Normalize();
+            GetHit(5f, 400f, vec, transform.position);
         }
     }
 }
