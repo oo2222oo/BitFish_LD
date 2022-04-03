@@ -463,6 +463,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1568775900, guid: 13d133b05b202ca4f9483338d0a731e5, type: 3}
+      propertyPath: bullet_prefab
+      value: 
+      objectReference: {fileID: 8880130902810737323, guid: 71c203907b5a6294f9df51353554c931, type: 3}
     - target: {fileID: 5846552110604017065, guid: 13d133b05b202ca4f9483338d0a731e5, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -523,6 +527,14 @@ PrefabInstance:
     - target: {fileID: 2254051469338728866, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}
       propertyPath: m_Name
       value: Enemy_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254051469338728889, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254051469338728892, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2254051469338728894, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}
       propertyPath: m_RootOrder

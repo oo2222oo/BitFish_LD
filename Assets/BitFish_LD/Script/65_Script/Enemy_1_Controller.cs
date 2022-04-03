@@ -28,7 +28,7 @@ public class Enemy_1_Controller : MonoBehaviour
     }
     void GroundMovement()
     {
-        rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+        rb.AddForce(new Vector2(horizontalMove, 0) * speed);
         if (horizontalMove != 0)
         {
             transform.localScale = new Vector3(horizontalMove, 1, 1);

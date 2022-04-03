@@ -14,10 +14,12 @@ public class Player_Controller : MonoBehaviour
     public LayerMask ground;
 
     public bool isGround, isJump, isDashing, isHurt, canHurt;
+    public GameObject bullet_prefab;
 
     bool jumpPressed;
     int jumpCount;
-    public float[] alarm = new float[5];
+    float direction;
+    private float[] alarm = new float[5];
 
     // Start is called before the first frame update
     void Awake()
@@ -40,6 +42,19 @@ public class Player_Controller : MonoBehaviour
         if (alarm[0] < 0)
         {
             canHurt = true;
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            diff.Normalize();
+            direction = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            GameObject bullet = Instantiate(bullet_prefab, rb.position, Quaternion.Euler(0f, 0f, direction));
+            Destroy(bullet, 5.0f);
+            Bullet_Manager bc = bullet.GetComponent<Bullet_Manager>();
+            if (bc != null)
+            {
+                bc.Move(direction, 50f);
+            }
         }
     }
 

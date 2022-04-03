@@ -203,9 +203,4 @@ MonoBehaviour:
   isDashing: 0
   isHurt: 0
   canHurt: 1
-  alarm:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  bullet_prefab: {fileID: 0}
