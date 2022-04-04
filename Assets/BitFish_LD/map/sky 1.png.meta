@@ -1,0 +1,363 @@
+fileFormatVersion: 2
+guid: ae564fa6e8b3bf446994f07b6e0e8178
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -278833479259874675
+    second: sky 1_0
+  - first:
+      213: -3564922737750998503
+    second: sky 1_1
+  - first:
+      213: -761116476730848877
+    second: sky 1_2
+  - first:
+      213: -7255360864319933198
+    second: sky 1_3
+  - first:
+      213: 7917683980474585647
+    second: sky 1_4
+  - first:
+      213: -3034834915842036366
+    second: sky 1_5
+  - first:
+      213: -1830647007242567574
+    second: sky 1_6
+  - first:
+      213: -4095038479303356574
+    second: sky 1_7
+  - first:
+      213: 7679256852674070671
+    second: sky 1_8
+  - first:
+      213: -769401736084292483
+    second: sky 1_9
+  - first:
+      213: 1138138740656693478
+    second: sky 1_10
+  - first:
+      213: 3313169963436293777
+    second: sky 1_11
+  - first:
+      213: 7294606301754898526
+    second: sky 1_12
+  - first:
+      213: -5270015428752452415
+    second: sky 1_13
+  - first:
+      213: 6444586967240443925
+    second: sky 1_14
+  - first:
+      213: 5925996413947649451
+    second: sky 1_15
+  - first:
+      213: -3243996960372873079
+    second: sky 1_16
+  - first:
+      213: -3102609957187642796
+    second: sky 1_17
+  - first:
+      213: 4740152977621245099
+    second: sky 1_18
+  - first:
+      213: -4025735334602437299
+    second: sky 1_19
+  - first:
+      213: 906102872308536841
+    second: sky 1_20
+  - first:
+      213: -7333264272773074819
+    second: sky 1_21
+  - first:
+      213: -1412048333566919513
+    second: sky 1_22
+  - first:
+      213: 3752230359319053013
+    second: sky 1_23
+  - first:
+      213: -508249758904418593
+    second: sky 1_24
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sky 1_7
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 444
+        width: 395
+        height: 356
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f419313308b27c0800000000000000
+      internalID: -4095038479303356574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky 1_9
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 665
+        width: 150
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c702f82398255f0800000000000000
+      internalID: -769401736084292483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky 1_10
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 660
+        width: 150
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0e3fd872b7bcf00800000000000000
+      internalID: 1138138740656693478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky 1_13
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 489
+        width: 150
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4d168a3e42dd6b0800000000000000
+      internalID: -5270015428752452415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky 1_19
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 491
+        width: 150
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d884dda07b128c0800000000000000
+      internalID: -4025735334602437299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky 1_22
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 249
+        width: 901
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7acbf00a585676ce0800000000000000
+      internalID: -1412048333566919513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky 1_23
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 51
+        width: 465
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d206a2b1a9921430800000000000000
+      internalID: 3752230359319053013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sky 1_24
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 49
+        width: 425
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdef25f798552f8f0800000000000000
+      internalID: -508249758904418593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -85,9 +85,11 @@ public class Item_Spawn_Script : MonoBehaviour
 
     public void itemGet_sc()
     {
+
         if (Item_Data == null) { return; }
         if (Item_Data.Item_Type == Item_Get_Data.Eunm_Type.Item)
         {
+            /*
             if (Item_Data.Item_ID == "Item1")
             {
 
@@ -108,15 +110,24 @@ public class Item_Spawn_Script : MonoBehaviour
                 Game_Manager_Script.Player_Movespeed += Item_Manager.Static.Item4_Movespeed;
                 if (Game_Manager_Script.Player_Movespeed > 0.5f) { Game_Manager_Script.Player_Movespeed = 0.5f; }
             }
+            */
+            for (int i = 0; i < UI_Manager.Static.Weapon_Bar.Count; i++)
+            {
+                if (UI_Manager.Static.Weapon_Bar[i].GetComponent<Weapon_Bar_Script>().weapon_Data == null)
+                {
+                    UI_Manager.Static.Weapon_Bar[i].weapon_Get(Item_Data);
+                    break;
+                }
+            }
         }
 
         if (Item_Data.Item_Type == Item_Get_Data.Eunm_Type.Weapon)
         {
             for (int i = 0; i < UI_Manager.Static.Weapon_Bar.Count; i++)
             {
-                if (UI_Manager.Static.Weapon_Bar[i] == null)
+                if (UI_Manager.Static.Weapon_Bar[i].GetComponent<Weapon_Bar_Script>().weapon_Data == null)
                 {
-                    UI_Manager.Static.Weapon_Bar[i].weapon_Data = (Weapon_Data)Item_Data;
+                    UI_Manager.Static.Weapon_Bar[i].weapon_Get(Item_Data);
                     break;
                 }
             }

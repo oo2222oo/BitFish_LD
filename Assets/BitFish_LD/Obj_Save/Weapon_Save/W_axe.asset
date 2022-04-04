@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa116b24dc9402444a13a3e420beff3f, type: 3}
+  m_Name: W_axe
+  m_EditorClassIdentifier: 
+  Item_Type: 1
+  Item_ID: W_Axe
+  Item_Name: "\u6B66\u5668A"
+  Item_Sprite: {fileID: 7625862603012110054, guid: 6f74ff90d61d91643b329cc0d665aa47, type: 3}
+  Weapon_Icon: {fileID: 7625862603012110054, guid: 6f74ff90d61d91643b329cc0d665aa47, type: 3}
+  Weapon_Damge: 1
+  Weapon_Bullet_Max: 3
+  Weapon_KnockBack: 1

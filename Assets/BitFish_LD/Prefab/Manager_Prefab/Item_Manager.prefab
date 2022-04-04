@@ -49,6 +49,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8a77384235ff1de42bb43abe1ffc2e3e, type: 2}
   - {fileID: 11400000, guid: 2aced7c67de212f4db19b05f7bc3b4f5, type: 2}
   - {fileID: 11400000, guid: 6297c6fee77b4164799a55cddbd91ad6, type: 2}
+  - {fileID: 11400000, guid: 37af1cb8641474340a72b815686c5f27, type: 2}
+  - {fileID: 11400000, guid: 6297c6fee77b4164799a55cddbd91ad6, type: 2}
   Item1_Damge_Mul: 0.1
   Item2_HP: 20
   Item3_Firerate: 0.05
