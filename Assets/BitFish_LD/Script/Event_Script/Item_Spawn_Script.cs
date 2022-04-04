@@ -112,7 +112,14 @@ public class Item_Spawn_Script : MonoBehaviour
 
         if (Item_Data.Item_Type == Item_Get_Data.Eunm_Type.Weapon)
         {
-            Weapon_Bar_Script.Static.weapon_Data = (Weapon_Data)Item_Data;
+            for (int i = 0; i < UI_Manager.Static.Weapon_Bar.Count; i++)
+            {
+                if (UI_Manager.Static.Weapon_Bar[i] == null)
+                {
+                    UI_Manager.Static.Weapon_Bar[i].weapon_Data = (Weapon_Data)Item_Data;
+                    break;
+                }
+            }
         } 
         
         Item_Data = null;
