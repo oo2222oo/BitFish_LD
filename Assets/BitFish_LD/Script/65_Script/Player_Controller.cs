@@ -10,11 +10,13 @@ public class Player_Controller : MonoBehaviour
 
     public float speed, jumpForce;
     private float horizontalMove,dashMove;
+    private int attackTime,attackRound;
+    private List<Collider2D> attackRange;
     public Transform groundCheck;
     public LayerMask ground;
 
-    public bool isGround, isJump, isDashing, isHurt, canHurt;
-    public GameObject bullet_prefab;
+    public bool isGround, isJump, isDashing, isHurt, canHurt, isPersue, isAttack, canPersue;
+    public GameObject weaponRange;
 
     bool jumpPressed;
     int jumpCount;
@@ -29,6 +31,9 @@ public class Player_Controller : MonoBehaviour
         coll = GetComponent<Collider2D>();
         Alarm.AlarmInit(alarm);
         anim = GetComponent<Animator>();
+        Weapon_Range_Manager wr = weaponRange.GetComponent<Weapon_Range_Manager>();
+        attackRange = wr.attackRange;
+        attackTime = wr.attackTime;
     }
 
     // Update is called once per frame
@@ -44,20 +49,20 @@ public class Player_Controller : MonoBehaviour
         {
             canHurt = true;
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isHurt)
         {
-            Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            diff.Normalize();
-            direction = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-            GameObject bullet = Instantiate(bullet_prefab, rb.position, Quaternion.Euler(0f, 0f, direction));
-            Destroy(bullet, 5.0f);
-            Bullet_Manager bc = bullet.GetComponent<Bullet_Manager>();
-            if (bc != null)
+            if (!isAttack)
             {
-                bc.Move(direction, 50f);
+                isAttack = true;
+                attackRound += 1;
+                anim.SetBool("attacking", true);
+            }
+            else if(canPersue && !isPersue && attackRound<attackTime)
+            {
+                isPersue = true;
             }
         }
-        if (horizontalMove != 0 && !isHurt)
+        if (horizontalMove != 0 && !isHurt && !isAttack)
         {
             alarm[2] = 0f;
             anim.SetBool("moving", true);
@@ -79,7 +84,7 @@ public class Player_Controller : MonoBehaviour
     private void FixedUpdate()
     {
         isGround = Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground);
-        if (!isHurt)
+        if (!isHurt && !isAttack)
         {
             GroundMovement();
             Jump();
@@ -92,7 +97,14 @@ public class Player_Controller : MonoBehaviour
             }
         }
     }
-
+    void AttackStop()
+    {
+        isAttack = false;
+        canPersue = false;
+        isPersue = false;
+        anim.SetBool("attacking", false);
+        attackRound = 0;
+    }
     void GroundMovement()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");//Ö»·µ»Ø-1£¬0£¬1
@@ -150,6 +162,7 @@ public class Player_Controller : MonoBehaviour
         {
             isHurt = true;
             canHurt = false;
+            AttackStop();
             alarm[0] = 1f;
             alarm[1] = 0.3f;
             Vector2 vec = transform.position - other.collider.transform.position;

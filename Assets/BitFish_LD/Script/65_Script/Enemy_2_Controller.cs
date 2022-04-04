@@ -36,13 +36,14 @@ public class Enemy_2_Controller : MonoBehaviour
             if (rb.velocity.magnitude < 1f && alarm[0]<attackcd-0.1f)
             {
                 anim.SetBool("attacking", false);
+                xscale = Mathf.Sign(target.transform.position.x - transform.position.x);
+
             }
         }
         else
         {
             alarm[0] = attackcd;
         }
-        xscale = Mathf.Sign(rb.velocity.x);
         if (xscale != 0)
         {
             transform.localScale = new Vector3(xscale, 1, 1);
