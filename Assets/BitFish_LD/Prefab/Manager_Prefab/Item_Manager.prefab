@@ -43,6 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52a292ad976ded4d99f399b8a155f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Item_List:
+  - {fileID: 11400000, guid: b08dc169b1efd2c44ae5965bc95a5894, type: 2}
+  - {fileID: 11400000, guid: 76b3b49bab4ded549b53a180d96e0f48, type: 2}
+  - {fileID: 11400000, guid: 8a77384235ff1de42bb43abe1ffc2e3e, type: 2}
+  - {fileID: 11400000, guid: 2aced7c67de212f4db19b05f7bc3b4f5, type: 2}
   Item1_Damge_Mul: 0.1
   Item2_HP: 20
   Item3_Firerate: 0.05
