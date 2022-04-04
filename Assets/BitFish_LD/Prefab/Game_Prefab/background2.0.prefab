@@ -764,7 +764,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: plat1_prefab (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3231424463380460454, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
 --- !u!4 &1844992218202907436 stripped
 Transform:
@@ -888,7 +889,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: plat1_prefab
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3231424463380460454, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
 --- !u!4 &1043614813138351900 stripped
 Transform:
@@ -1074,7 +1076,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: plat1_prefab (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3231424463380460454, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
 --- !u!4 &3926429116756703334 stripped
 Transform:
@@ -1198,7 +1201,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: plat1_prefab (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3231424463380460454, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
 --- !u!4 &2863601772120327343 stripped
 Transform:
@@ -1260,7 +1264,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: plat1_prefab (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3231424463380460454, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
 --- !u!4 &6842233733943876810 stripped
 Transform:
@@ -1322,7 +1327,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: plat1_prefab (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3231424463380460454, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
 --- !u!4 &6221313125281525075 stripped
 Transform:
@@ -1384,7 +1390,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: plat1_prefab (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3231424463380460454, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
 --- !u!4 &4738438023164697956 stripped
 Transform:
@@ -1446,7 +1453,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: plat1_prefab (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3231424463380460454, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43ca21ab86cc5c643a098f9e59f9367a, type: 3}
 --- !u!4 &8424350650716509242 stripped
 Transform:
