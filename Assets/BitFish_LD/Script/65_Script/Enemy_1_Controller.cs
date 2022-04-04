@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy_1_Controller : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator anim;
     public Transform turnCheck;
     public LayerMask ground;
     public bool hasGround;
@@ -16,6 +17,7 @@ public class Enemy_1_Controller : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         horizontalMove = Mathf.Sign(Random.Range(-1, 1));
     }
 
@@ -24,7 +26,10 @@ public class Enemy_1_Controller : MonoBehaviour
     {
         hasGround = Physics2D.OverlapCircle(turnCheck.position, 0.1f, ground);
         if (!hasGround) horizontalMove = -horizontalMove;
-        GroundMovement();
+        if (anim.GetBool("hurting") == false)
+        {
+            GroundMovement();
+        }
     }
     void GroundMovement()
     {
