@@ -8,9 +8,6 @@ using UnityEditor;
 /// </summary>
 
 [CreateAssetMenu(fileName = "NewItem", menuName = "Item/NewItem")]
-public class Item_Data : ScriptableObject
+public class Item_Data : Item_Get_Data
 {
-    public string Item_ID;
-    public string Item_Name;
-    public Sprite Item_Sprite;
 }

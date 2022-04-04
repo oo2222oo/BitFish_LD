@@ -11,7 +11,7 @@ public class Item_Manager : MonoBehaviour
     public static Item_Manager Static;
 
     [LabelText("道具列表")]
-    public List<Item_Data> Item_List = new List<Item_Data>();
+    public List<Item_Get_Data> Item_List = new List<Item_Get_Data>();
 
     [LabelText("道具1玩家傷害乘數")]
     public float Item1_Damge_Mul = 0.1f;

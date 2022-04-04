@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class Item_Spawn_Script : MonoBehaviour
 {
-    public Item_Data Item_Data; //道具數據
+    public Item_Get_Data Item_Data; //道具數據
     public float Destroy_time;  //消失時間
     public float Distance;  //距離
     public GameObject Show_UI;  //顯示位置的UI
@@ -57,9 +57,8 @@ public class Item_Spawn_Script : MonoBehaviour
         }
     }
 
-    public void Item_Spawn_sc(Item_Data v_item,float Des_time)
+    public void Item_Spawn_sc(Item_Get_Data v_item,float Des_time)
     {
-        Debug.Log(Item_Manager.Static.Item_List.Count);
         if (v_item == null) { v_item = Item_Manager.Static.Item_List[Random.Range(0, Item_Manager.Static.Item_List.Count-1)]; }
         bool v_ok=false;
         while (v_ok)
@@ -87,27 +86,35 @@ public class Item_Spawn_Script : MonoBehaviour
     public void itemGet_sc()
     {
         if (Item_Data == null) { return; }
-        if (Item_Data.Item_ID == "Item1")
+        if (Item_Data.Item_Type == Item_Get_Data.Eunm_Type.Item)
         {
-            
-            Game_Manager_Script.Player_Damage += Item_Manager.Static.Item1_Damge_Mul;
+            if (Item_Data.Item_ID == "Item1")
+            {
+
+                Game_Manager_Script.Player_Damage += Item_Manager.Static.Item1_Damge_Mul;
+            }
+            if (Item_Data.Item_ID == "Item2")
+            {
+                Game_Manager_Script.Player_HP_Max += Item_Manager.Static.Item2_HP;
+                Game_Manager_Script.Player_HP += Item_Manager.Static.Item2_HP;
+            }
+            if (Item_Data.Item_ID == "Item3")
+            {
+                Game_Manager_Script.Player_Firerate += Item_Manager.Static.Item3_Firerate;
+                if (Game_Manager_Script.Player_Firerate > 0.5f) { Game_Manager_Script.Player_Firerate = 0.5f; }
+            }
+            if (Item_Data.Item_ID == "Item4")
+            {
+                Game_Manager_Script.Player_Movespeed += Item_Manager.Static.Item4_Movespeed;
+                if (Game_Manager_Script.Player_Movespeed > 0.5f) { Game_Manager_Script.Player_Movespeed = 0.5f; }
+            }
         }
-        if (Item_Data.Item_ID == "Item2")
+
+        if (Item_Data.Item_Type == Item_Get_Data.Eunm_Type.Weapon)
         {
-            Game_Manager_Script.Player_HP_Max += Item_Manager.Static.Item2_HP;
-            Game_Manager_Script.Player_HP += Item_Manager.Static.Item2_HP;
-        }
-        if (Item_Data.Item_ID == "Item3")
-        {
-            Game_Manager_Script.Player_Firerate += Item_Manager.Static.Item3_Firerate;
-            if (Game_Manager_Script.Player_Firerate > 0.5f) { Game_Manager_Script.Player_Firerate = 0.5f; }
-        }
-        if (Item_Data.Item_ID == "Item4")
-        {
-            Game_Manager_Script.Player_Movespeed += Item_Manager.Static.Item4_Movespeed;
-            if (Game_Manager_Script.Player_Movespeed > 0.5f){ Game_Manager_Script.Player_Movespeed = 0.5f; }
-        }
-        Debug.Log(Game_Manager_Script.Player_Damage);
+            Weapon_Bar_Script.Static.weapon_Data = (Weapon_Data)Item_Data;
+        } 
+        
         Item_Data = null;
         gameObject.SetActive(false);
     }
