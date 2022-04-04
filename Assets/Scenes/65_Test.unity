@@ -273,7 +273,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1120742454, guid: 3873b02a257f8fa42895be709b708824, type: 3}
       propertyPath: m_LinearDrag
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2027722573813237143, guid: 3873b02a257f8fa42895be709b708824, type: 3}
       propertyPath: m_Sprite
