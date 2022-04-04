@@ -59,7 +59,8 @@ public class Item_Spawn_Script : MonoBehaviour
 
     public void Item_Spawn_sc(Item_Data v_item,float Des_time)
     {
-        if (v_item == null) { v_item = Item_Manager.Static.Item_List[Random.Range(0, Item_Manager.Static.Item_List.Count)]; }
+        Debug.Log(Item_Manager.Static.Item_List.Count);
+        if (v_item == null) { v_item = Item_Manager.Static.Item_List[Random.Range(0, Item_Manager.Static.Item_List.Count-1)]; }
         bool v_ok=false;
         while (v_ok)
         {
@@ -74,7 +75,7 @@ public class Item_Spawn_Script : MonoBehaviour
             }
             if (!v_ok)
             {
-                v_item = Item_Manager.Static.Item_List[Random.Range(0, Item_Manager.Static.Item_List.Count)];
+                v_item = Item_Manager.Static.Item_List[Random.Range(0, Item_Manager.Static.Item_List.Count-1)];
             }
         }
         Item_Data = v_item;
