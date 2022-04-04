@@ -8,6 +8,7 @@ public class Enemy_Main_Manager : MonoBehaviour
     private Animator anim;
     public float maxhp,nowhp;
     public GameObject body;
+    public float damage,knockback;
     private float[] alarm = new float[3];
     private bool isHurt;
     // Start is called before the first frame update

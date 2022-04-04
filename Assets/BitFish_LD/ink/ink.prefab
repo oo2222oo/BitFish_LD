@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1120742453}
   m_Layer: 0
   m_Name: ink
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ Animator:
   m_GameObject: {fileID: 6221170057757669178}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b608ae5b585038d46b30f7e95bdb9f4d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4000f6bf89d1ef146b4f47bbbd750716, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -99,7 +99,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 4
+  m_LinearDrag: 3
   m_AngularDrag: 0
   m_GravityScale: 4
   m_Material: {fileID: 0}
@@ -241,10 +241,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1615591991
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4ada3051f74d31f4992768f63f4f8413, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1f084d9bcede574e90b399b905c721a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

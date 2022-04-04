@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: c79501ee303314f4b956fc5340f2aa7b
+guid: a8aa6a877d2103a4d82742c159386c3d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8069619478552258361
-    second: slime1_0
+      213: -6778454531673663709
+    second: fly4_0
   - first:
-      213: -3041987457767028285
-    second: slime1_1
+      213: 4158224698340495321
+    second: fly4_1
   - first:
-      213: -2851724377359858702
-    second: slime1_2
+      213: -6486355439624611778
+    second: fly4_2
   - first:
-      213: 8666801654570291683
-    second: slime1_3
+      213: 4274688453975804863
+    second: fly4_3
   - first:
-      213: 4716848356589353756
-    second: slime1_4
+      213: 3829934711348399955
+    second: fly4_4
   - first:
-      213: 5794092588957780287
-    second: slime1_5
+      213: 7816251775969905368
+    second: fly4_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,13 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slime1_0
+      name: fly4_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 80
-        height: 64
+        y: 48
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,20 +135,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9372eab392c0dff60800000000000000
-      internalID: 8069619478552258361
+      spriteID: 327547964871ee1a0800000000000000
+      internalID: -6778454531673663709
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime1_1
+      name: fly4_1
       rect:
         serializedVersion: 2
-        x: 80
-        y: 64
-        width: 80
-        height: 64
+        x: 64
+        y: 48
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c94a983680b8c5d0800000000000000
-      internalID: -3041987457767028285
+      spriteID: 9df47d8f45bf4b930800000000000000
+      internalID: 4158224698340495321
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime1_2
+      name: fly4_2
       rect:
         serializedVersion: 2
-        x: 160
-        y: 64
-        width: 80
-        height: 64
+        x: 128
+        y: 48
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f3c422b9c3ac68d0800000000000000
-      internalID: -2851724377359858702
+      spriteID: e3890460816dbf5a0800000000000000
+      internalID: -6486355439624611778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime1_3
+      name: fly4_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 80
-        height: 64
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,20 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e11e67af2aa64870800000000000000
-      internalID: 8666801654570291683
+      spriteID: fbb01b8208eb25b30800000000000000
+      internalID: 4274688453975804863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime1_4
+      name: fly4_4
       rect:
         serializedVersion: 2
-        x: 80
+        x: 64
         y: 0
-        width: 80
-        height: 64
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1bb4e1e69c957140800000000000000
-      internalID: 4716848356589353756
+      spriteID: 35f0cdef359a62530800000000000000
+      internalID: 3829934711348399955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime1_5
+      name: fly4_5
       rect:
         serializedVersion: 2
-        x: 160
+        x: 128
         y: 0
-        width: 80
-        height: 64
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,8 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f394d80e280c86050800000000000000
-      internalID: 5794092588957780287
+      spriteID: 8dac3b5f397e87c60800000000000000
+      internalID: 7816251775969905368
       vertices: []
       indices: 
       edges: []

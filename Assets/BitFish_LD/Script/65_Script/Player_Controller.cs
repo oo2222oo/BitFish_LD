@@ -154,7 +154,8 @@ public class Player_Controller : MonoBehaviour
             alarm[1] = 0.3f;
             Vector2 vec = transform.position - other.collider.transform.position;
             vec.Normalize();
-            GetHit(5f, 400f, vec, transform.position);
+            Enemy_Main_Manager ec = other.collider.GetComponent<Enemy_Main_Manager>();
+            GetHit(ec.damage, ec.knockback, vec, transform.position);
         }
     }
 
