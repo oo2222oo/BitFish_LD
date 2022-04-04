@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa116b24dc9402444a13a3e420beff3f, type: 3}
   m_Name: NewWeapon
   m_EditorClassIdentifier: 
+  Item_Type: 1
   Item_ID: Weapon1
   Item_Name: "\u6B66\u5668A"
   Item_Sprite: {fileID: 0}
