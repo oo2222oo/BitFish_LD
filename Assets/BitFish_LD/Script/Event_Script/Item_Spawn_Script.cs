@@ -30,6 +30,23 @@ public class Item_Spawn_Script : MonoBehaviour
             float angle = -Mathf.Atan2(targetDir.x, targetDir.y) * Mathf.Rad2Deg+90;
             Show_UI.transform.position = new Vector2(transform.position.x + targetSetDis.x, transform.position.y + targetSetDis.y);
             Show_UI.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            float v_size = Camera.main.orthographicSize/5;
+            if (Show_UI.transform.position.x < Camera.main.transform.position.x - 6.5f* v_size)
+            {
+                Show_UI.transform.position = new Vector2(Camera.main.transform.position.x - 6.5f * v_size, Camera.main.transform.position.y);
+            }
+            if (Show_UI.transform.position.x > Camera.main.transform.position.x + 6.5f * v_size)
+            {
+                Show_UI.transform.position = new Vector2(Camera.main.transform.position.x + 6.5f * v_size, Camera.main.transform.position.y);
+            }
+            if (Show_UI.transform.position.y < Camera.main.transform.position.y - 4f * v_size)
+            {
+                Show_UI.transform.position = new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y - 4f * v_size);
+            }
+            if (Show_UI.transform.position.y > Camera.main.transform.position.y + 4f * v_size)
+            {
+                Show_UI.transform.position = new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y + 4f * v_size);
+            }
             Distance =Vector2.Distance(Game_Manager_Script.Player.transform.position,transform.position);
             //µÀ¾ßÏûÊ§
             Destroy_time -= Time.deltaTime;
