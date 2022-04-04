@@ -157,4 +157,13 @@ public class Player_Controller : MonoBehaviour
             GetHit(5f, 400f, vec, transform.position);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Item_Spawn_Script v_Scrpit = other.gameObject.transform.parent.GetComponent<Item_Spawn_Script>();
+        if (v_Scrpit!=null)
+        {
+            v_Scrpit.itemGet_sc();
+        }
+    }
 }

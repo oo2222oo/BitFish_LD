@@ -12,7 +12,7 @@ public class Item_Spawn_Script : MonoBehaviour
     public float Distance;  //距離
     public GameObject Show_UI;  //顯示位置的UI
     public GameObject Item_obj; //道具
-
+    
 
     public void Start()
     {
@@ -88,6 +88,7 @@ public class Item_Spawn_Script : MonoBehaviour
         if (Item_Data == null) { return; }
         if (Item_Data.Item_ID == "Item1")
         {
+            
             Game_Manager_Script.Player_Damage += Item_Manager.Static.Item1_Damge_Mul;
         }
         if (Item_Data.Item_ID == "Item2")
@@ -105,6 +106,9 @@ public class Item_Spawn_Script : MonoBehaviour
             Game_Manager_Script.Player_Movespeed += Item_Manager.Static.Item4_Movespeed;
             if (Game_Manager_Script.Player_Movespeed > 0.5f){ Game_Manager_Script.Player_Movespeed = 0.5f; }
         }
+        Debug.Log(Game_Manager_Script.Player_Damage);
+        Item_Data = null;
+        gameObject.SetActive(false);
     }
 
 }
