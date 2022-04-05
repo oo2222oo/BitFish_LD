@@ -131,8 +131,8 @@ public class Item_Spawn_Script : MonoBehaviour
                     break;
                 }
             }
-        } 
-        
+        }
+        Debug.Log("“ìµ½ÁË");
         Item_Data = null;
         gameObject.SetActive(false);
     }

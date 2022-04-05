@@ -18,7 +18,7 @@ public class Player_Controller : MonoBehaviour
     public LayerMask ground;
 
     public bool isGround, isJump, isDashing, isHurt, canHurt, isAttack, canPersue;
-    public GameObject weaponObj;
+    public Weapon_Manager weaponObj;
     public bool tempUpdate;
 
     bool jumpPressed;
@@ -109,7 +109,7 @@ public class Player_Controller : MonoBehaviour
     }
     void WeaponInit()
     {
-        Weapon_Manager weapon = weaponObj.GetComponent<Weapon_Manager>();
+        Weapon_Manager weapon = weaponObj;
         attackRange = weapon.attackRange;
         attackTime = weapon.attackTime;
         damage = weapon.damage;
@@ -232,5 +232,13 @@ public class Player_Controller : MonoBehaviour
             Item_Spawn_Script v_Scrpit = other.gameObject.transform.parent.GetComponent<Item_Spawn_Script>();
             v_Scrpit.itemGet_sc();
         }
+    }
+
+    public void Weapon_Change()    //«–ìQŒ‰∆˜ïr’{”√ﬂ@ÇÄ
+    {
+        Weapon_Data v_weapon_data = (Weapon_Data)UI_Manager.Static.Weapon_Bar[Game_Manager_Script.Weapon_loc].weapon_Data;
+        weaponObj = v_weapon_data.Weapon_manager;
+
+        WeaponInit();
     }
 }
