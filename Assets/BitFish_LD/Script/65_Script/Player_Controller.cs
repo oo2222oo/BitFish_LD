@@ -49,7 +49,7 @@ public class Player_Controller : MonoBehaviour
         {
             canHurt = true;
         }
-        if (Input.GetMouseButtonDown(0) && !isHurt)
+        if (Input.GetButtonDown("Attack") && !isHurt)
         {
             if (!isAttack)
             {
@@ -116,9 +116,7 @@ public class Player_Controller : MonoBehaviour
     {
         canPersue = true;
         rb.velocity = new Vector2(0, 0);
-        Vector2 playerDir = new Vector2(transform.localScale.x, 0);
-        rb.AddForce(playerDir * attackForce[attackRound - 1]);
-        playerDir.y += 1;
+        rb.AddForce(new Vector2(transform.localScale.x, 0) * attackForce[attackRound - 1]);
         var filter = new ContactFilter2D();
         filter.useTriggers = true;
         Collider2D[] attackCollide = new Collider2D[20];
@@ -128,7 +126,7 @@ public class Player_Controller : MonoBehaviour
             if (attackCollide[i].tag == "Enemy")
             {
                 Enemy_Main_Manager ec = attackCollide[i].GetComponent<Enemy_Main_Manager>();
-                ec.GetHit(damage[attackRound - 1], knockBack[attackRound - 1], knockDir[attackRound - 1].normalized * playerDir);
+                ec.GetHit(damage[attackRound - 1], knockBack[attackRound - 1], knockDir[attackRound - 1].normalized * new Vector2(Mathf.Sign(attackCollide[i].transform.position.x - transform.position.x), 1));
             }
         }
     }
@@ -148,8 +146,16 @@ public class Player_Controller : MonoBehaviour
     }
     void GroundMovement()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal");//Ö»·µ»Ø-1£¬0£¬1
-        dashMove = Input.GetAxisRaw("Fire3");
+        horizontalMove = Input.GetAxisRaw("Horizontal");
+        if (Mathf.Abs(horizontalMove) < 0.1f)
+        {
+            horizontalMove = 0f;
+        }
+        else
+        {
+            horizontalMove = Mathf.Sign(horizontalMove);
+        }
+        dashMove = Input.GetAxisRaw("Dash");
         if (dashMove == 1 && alarm[3]<=0)
         {
             alarm[3] = 1f;
@@ -163,7 +169,7 @@ public class Player_Controller : MonoBehaviour
             rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
         }
 
-        if (horizontalMove != 0)
+        if (horizontalMove != 0f)
         {
             transform.localScale = new Vector3(horizontalMove, 1, 1);
         }
