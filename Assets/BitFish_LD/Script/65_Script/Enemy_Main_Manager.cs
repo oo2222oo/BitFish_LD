@@ -42,6 +42,8 @@ public class Enemy_Main_Manager : MonoBehaviour
         {
             GameObject bd = Instantiate(body, transform.position, Quaternion.identity);
             bd.transform.localScale = transform.localScale;
+            var rbd = bd.GetComponent<Rigidbody2D>();
+            rbd.AddForce(dir * force);
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
