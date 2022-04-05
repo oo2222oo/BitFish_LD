@@ -9,14 +9,16 @@ public class Player_Controller : MonoBehaviour
     private Animator anim;
 
     public float speed, jumpForce;
+    public List<float> damage, knockBack, attackForce;
     private float horizontalMove,dashMove;
     private int attackTime,attackRound;
     private List<Collider2D> attackRange;
+    private List<Vector2> knockDir;
     public Transform groundCheck;
     public LayerMask ground;
 
-    public bool isGround, isJump, isDashing, isHurt, canHurt, isPersue, isAttack, canPersue;
-    public GameObject weaponRange;
+    public bool isGround, isJump, isDashing, isHurt, canHurt, isAttack, canPersue;
+    public GameObject weaponObj;
 
     bool jumpPressed;
     int jumpCount;
@@ -31,9 +33,7 @@ public class Player_Controller : MonoBehaviour
         coll = GetComponent<Collider2D>();
         Alarm.AlarmInit(alarm);
         anim = GetComponent<Animator>();
-        Weapon_Range_Manager wr = weaponRange.GetComponent<Weapon_Range_Manager>();
-        attackRange = wr.attackRange;
-        attackTime = wr.attackTime;
+        WeaponInit();
     }
 
     // Update is called once per frame
@@ -55,11 +55,14 @@ public class Player_Controller : MonoBehaviour
             {
                 isAttack = true;
                 attackRound += 1;
-                anim.SetBool("attacking", true);
+                anim.SetInteger("attackround", attackRound);
+                anim.SetTrigger("attacking");
             }
-            else if(canPersue && !isPersue && attackRound<attackTime)
+            else if(canPersue && attackRound<attackTime)
             {
-                isPersue = true;
+                attackRound += 1;
+                anim.SetInteger("attackround", attackRound);
+                canPersue = false;
             }
         }
         if (horizontalMove != 0 && !isHurt && !isAttack)
@@ -93,17 +96,54 @@ public class Player_Controller : MonoBehaviour
         {
             if (Mathf.Abs(rb.velocity.x)+ Mathf.Abs(rb.velocity.y) < 2f && alarm[1]<=0)
             {
+                anim.SetBool("hurting", false);
                 isHurt = false;
             }
+        }
+    }
+    void WeaponInit()
+    {
+        Weapon_Manager weapon = weaponObj.GetComponent<Weapon_Manager>();
+        attackRange = weapon.attackRange;
+        attackTime = weapon.attackTime;
+        damage = weapon.damage;
+        knockBack = weapon.knockBack;
+        attackForce = weapon.attackForce;
+        knockDir = weapon.knockDir;
+    }
+
+    void AttackDeal()
+    {
+        canPersue = true;
+        rb.velocity = new Vector2(0, 0);
+        Vector2 playerDir = new Vector2(transform.localScale.x, 0);
+        rb.AddForce(playerDir * attackForce[attackRound - 1]);
+        var filter = new ContactFilter2D();
+        filter.useTriggers = true;
+        Collider2D[] attackCollide = new Collider2D[20];
+        int collideNum = attackRange[attackRound - 1].OverlapCollider(filter, attackCollide);
+        for(int i = 0; i < collideNum; i++)
+        {
+            if (attackCollide[i].tag == "Enemy")
+            {
+                Enemy_Main_Manager ec = attackCollide[i].GetComponent<Enemy_Main_Manager>();
+                ec.GetHit(damage[attackRound - 1], knockBack[attackRound - 1], knockDir[attackRound - 1].normalized * playerDir);
+            }
+        }
+    }
+    void AttackStopIfNotPersue()
+    {
+        if (canPersue)
+        {
+            AttackStop();
         }
     }
     void AttackStop()
     {
         isAttack = false;
         canPersue = false;
-        isPersue = false;
-        anim.SetBool("attacking", false);
         attackRound = 0;
+        anim.SetInteger("attackround", 0);
     }
     void GroundMovement()
     {
@@ -162,6 +202,7 @@ public class Player_Controller : MonoBehaviour
         {
             isHurt = true;
             canHurt = false;
+            anim.SetBool("hurting", true);
             AttackStop();
             alarm[0] = 1f;
             alarm[1] = 0.3f;

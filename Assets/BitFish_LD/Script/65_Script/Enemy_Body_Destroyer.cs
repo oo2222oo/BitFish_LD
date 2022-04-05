@@ -15,6 +15,10 @@ public class Enemy_Body_Destroyer : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
+        if (timer < 1f)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(gameObject.GetComponent<SpriteRenderer>().color.r, gameObject.GetComponent<SpriteRenderer>().color.g, gameObject.GetComponent<SpriteRenderer>().color.b, timer);
+        }
         if (timer <= 0)
         {
             Destroy(gameObject);
