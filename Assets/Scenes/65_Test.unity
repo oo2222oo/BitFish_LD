@@ -188,11 +188,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ffaf31a45178b746ab37c98a2c2f4cb, type: 3}
---- !u!1 &409067809 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 409067809, guid: 3873b02a257f8fa42895be709b708824, type: 3}
-  m_PrefabInstance: {fileID: 896125745}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &475352560
 GameObject:
   m_ObjectHideFlags: 3
@@ -857,14 +852,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 47180948, guid: 3873b02a257f8fa42895be709b708824, type: 3}
+      propertyPath: knockBack.Array.data[0]
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 47180948, guid: 3873b02a257f8fa42895be709b708824, type: 3}
+      propertyPath: knockBack.Array.data[1]
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 409067811, guid: 3873b02a257f8fa42895be709b708824, type: 3}
+      propertyPath: knockBack.Array.data[0]
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 409067811, guid: 3873b02a257f8fa42895be709b708824, type: 3}
+      propertyPath: knockBack.Array.data[1]
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 1120742453, guid: 3873b02a257f8fa42895be709b708824, type: 3}
       propertyPath: weaponObj
       value: 
-      objectReference: {fileID: 409067809}
+      objectReference: {fileID: 1138215106}
     - target: {fileID: 4039026406485739838, guid: 3873b02a257f8fa42895be709b708824, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 4bad65b1df8db82489c692b1ec90a797, type: 2}
+      objectReference: {fileID: 9100000, guid: 4000f6bf89d1ef146b4f47bbbd750716, type: 2}
     - target: {fileID: 6221170057757669178, guid: 3873b02a257f8fa42895be709b708824, type: 3}
       propertyPath: m_Name
       value: ink
@@ -972,6 +983,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7e2dcfe3e35b3c4b883a6bc18e75a7d, type: 3}
+--- !u!1 &1138215106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 47180946, guid: 3873b02a257f8fa42895be709b708824, type: 3}
+  m_PrefabInstance: {fileID: 896125745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1353897486
 PrefabInstance:
   m_ObjectHideFlags: 0
