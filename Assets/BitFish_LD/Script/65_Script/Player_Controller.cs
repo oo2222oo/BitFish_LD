@@ -19,6 +19,7 @@ public class Player_Controller : MonoBehaviour
 
     public bool isGround, isJump, isDashing, isHurt, canHurt, isAttack, canPersue;
     public GameObject weaponObj;
+    public bool tempUpdate;
 
     bool jumpPressed;
     int jumpCount;
@@ -41,6 +42,11 @@ public class Player_Controller : MonoBehaviour
     {
         Alarm.AlarmSet(alarm);
         anim.SetFloat("yspeed", rb.velocity.y);
+        if (tempUpdate)
+        {
+            tempUpdate = false;
+            WeaponInit();           
+        }
         if (Input.GetButtonDown("Jump") && jumpCount > 0)
         {
             jumpPressed = true;
