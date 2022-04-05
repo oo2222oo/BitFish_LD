@@ -118,6 +118,7 @@ public class Player_Controller : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
         Vector2 playerDir = new Vector2(transform.localScale.x, 0);
         rb.AddForce(playerDir * attackForce[attackRound - 1]);
+        playerDir.y += 1;
         var filter = new ContactFilter2D();
         filter.useTriggers = true;
         Collider2D[] attackCollide = new Collider2D[20];

@@ -8,7 +8,7 @@ public class Enemy_Main_Manager : MonoBehaviour
     private Animator anim;
     public float maxhp;
     private float nowhp;
-    public GameObject body;
+    public GameObject body,deathEffect;
     public float damage,knockback;
     private float[] alarm = new float[3];
     private bool isHurt;
@@ -18,6 +18,7 @@ public class Enemy_Main_Manager : MonoBehaviour
         Alarm.AlarmInit(alarm);
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        nowhp = maxhp;
     }
 
     // Update is called once per frame
@@ -41,6 +42,7 @@ public class Enemy_Main_Manager : MonoBehaviour
         {
             GameObject bd = Instantiate(body, transform.position, Quaternion.identity);
             bd.transform.localScale = transform.localScale;
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
