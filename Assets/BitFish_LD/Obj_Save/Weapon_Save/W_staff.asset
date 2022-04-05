@@ -16,7 +16,4 @@ MonoBehaviour:
   Item_ID: W_staff
   Item_Name: "\u6B66\u5668A"
   Item_Sprite: {fileID: 2167334719157002095, guid: 6f74ff90d61d91643b329cc0d665aa47, type: 3}
-  Weapon_Icon: {fileID: 2167334719157002095, guid: 6f74ff90d61d91643b329cc0d665aa47, type: 3}
-  Weapon_Damge: 1
-  Weapon_Bullet_Max: 3
-  Weapon_KnockBack: 1
+  Weapon_manager: {fileID: 2868771681134245474, guid: f78cb5dee8ea78846963a10be0e9cd10, type: 3}

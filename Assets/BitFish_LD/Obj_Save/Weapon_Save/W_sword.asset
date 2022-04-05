@@ -16,7 +16,4 @@ MonoBehaviour:
   Item_ID: W_sword
   Item_Name: "\u6B66\u5668A"
   Item_Sprite: {fileID: 7608243696861918260, guid: 6f74ff90d61d91643b329cc0d665aa47, type: 3}
-  Weapon_Icon: {fileID: 7608243696861918260, guid: 6f74ff90d61d91643b329cc0d665aa47, type: 3}
-  Weapon_Damge: 1
-  Weapon_Bullet_Max: 3
-  Weapon_KnockBack: 1
+  Weapon_manager: {fileID: 1364236743798388616, guid: f8fed4d475f4cb14a93608a02c9c2a06, type: 3}
