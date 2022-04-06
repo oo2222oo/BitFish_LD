@@ -127,13 +127,19 @@ public class Player_Controller : MonoBehaviour
         filter.useTriggers = true;
         Collider2D[] attackCollide = new Collider2D[20];
         int collideNum = attackRange[attackRound - 1].OverlapCollider(filter, attackCollide);
+        bool hit = false;
         for(int i = 0; i < collideNum; i++)
         {
             if (attackCollide[i].tag == "Enemy")
             {
+                hit = true;
                 Enemy_Main_Manager ec = attackCollide[i].GetComponent<Enemy_Main_Manager>();
                 ec.GetHit(damage[attackRound - 1], knockBack[attackRound - 1], knockDir[attackRound - 1].normalized * new Vector2(Mathf.Sign(attackCollide[i].transform.position.x - transform.position.x), 1));
             }
+        }
+        if (hit)
+        {
+            SoundPlay("enemyHit");
         }
     }
     void AttackStopIfNotPersue()
@@ -150,6 +156,12 @@ public class Player_Controller : MonoBehaviour
         attackRound = 0;
         anim.SetInteger("attackround", 0);
     }
+
+    void SoundPlay(string snd)
+    {
+        Sound_Manager.Sound.Play(snd);
+    }
+
     void GroundMovement()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");
@@ -191,7 +203,7 @@ public class Player_Controller : MonoBehaviour
         }
         if (jumpPressed && isGround)
         {
-            anim.SetTrigger("jumping");
+            SoundPlay("jumpSound");
             isJump = true;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpCount--;
@@ -199,6 +211,7 @@ public class Player_Controller : MonoBehaviour
         }
         else if (jumpPressed && jumpCount > 0 && isJump)
         {
+            SoundPlay("jumpSound");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpCount--;
             jumpPressed = false;
@@ -207,6 +220,7 @@ public class Player_Controller : MonoBehaviour
     //ÕÊº“ ‹…À
     public void GetHit(float dam, float force, Vector2 dir, Vector2 hitpos)
     {
+        SoundPlay("playerHit");
         rb.AddForceAtPosition(dir * force, hitpos);
     }
     private void OnCollisionStay2D(Collision2D other)
