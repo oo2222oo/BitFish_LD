@@ -7,8 +7,10 @@ public class Player_Controller : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D coll;
     private Animator anim;
+    private Cinemachine.CinemachineImpulseSource cis;
 
     public float speed, jumpForce;
+    public int jumpTime;
     public List<float> damage, knockBack, attackForce;
     private float horizontalMove,dashMove;
     private int attackTime,attackRound;
@@ -20,11 +22,11 @@ public class Player_Controller : MonoBehaviour
     public bool isGround, isJump, isDashing, isHurt, canHurt, isAttack, canPersue;
     public Weapon_Manager weaponObj;
     public bool tempUpdate;
+    private int jumpCount;
 
     bool jumpPressed;
-    int jumpCount;
     float direction;
-    private float[] alarm = new float[5];
+    private float[] alarm = new float[8];
 
     // Start is called before the first frame update
     void Awake()
@@ -34,6 +36,7 @@ public class Player_Controller : MonoBehaviour
         coll = GetComponent<Collider2D>();
         Alarm.AlarmInit(alarm);
         anim = GetComponent<Animator>();
+        cis = GetComponent<Cinemachine.CinemachineImpulseSource>();
         WeaponInit();
     }
 
@@ -47,13 +50,22 @@ public class Player_Controller : MonoBehaviour
             tempUpdate = false;
             WeaponInit();           
         }
-        if (Input.GetButtonDown("Jump") && jumpCount > 0)
+        if (Input.GetButtonDown("Jump"))
         {
             jumpPressed = true;
+            alarm[4] = 0.2f;
         }
-        if (alarm[0] < 0)
+        if (alarm[4] < 0f)
+        {
+            jumpPressed = false;
+        }
+        if (alarm[0] < 0f)
         {
             canHurt = true;
+        }
+        if (alarm[5] < 0f)
+        {
+            anim.speed = 1;
         }
         if (Input.GetButtonDown("Attack") && !isHurt)
         {
@@ -130,16 +142,28 @@ public class Player_Controller : MonoBehaviour
         bool hit = false;
         for(int i = 0; i < collideNum; i++)
         {
+            var hitdir = knockDir[attackRound - 1].normalized * new Vector2(Mathf.Sign(attackCollide[i].transform.position.x - transform.position.x), 1);
             if (attackCollide[i].tag == "Enemy")
             {
                 hit = true;
                 Enemy_Main_Manager ec = attackCollide[i].GetComponent<Enemy_Main_Manager>();
-                ec.GetHit(damage[attackRound - 1], knockBack[attackRound - 1], knockDir[attackRound - 1].normalized * new Vector2(Mathf.Sign(attackCollide[i].transform.position.x - transform.position.x), 1));
+                ec.GetHit(damage[attackRound - 1], knockBack[attackRound - 1], hitdir);
+            }
+            if(attackCollide[i].tag == "Body")
+            {
+                var pos = attackCollide[i].transform.position;
+                pos.x += Random.Range(-0.1f, 0.1f);
+                pos.y += Random.Range(-0.1f, 0.1f);
+                attackCollide[i].GetComponent<Rigidbody2D>().AddForceAtPosition(knockBack[attackRound - 1] * hitdir, pos);
+
             }
         }
         if (hit)
         {
+            anim.speed = 0;
+            alarm[5] = 0.1f;
             SoundPlay("enemyHit");
+            cis.GenerateImpulse(new Vector2(1, 1));
         }
     }
     void AttackStopIfNotPersue()
@@ -196,26 +220,33 @@ public class Player_Controller : MonoBehaviour
 
     void Jump()//跳跃
     {
+        
         if (isGround)
         {
-            jumpCount = 2;//可跳跃数量
             isJump = false;
+            jumpCount = jumpTime;
+        }
+        else
+        {
+            if (!isJump) jumpCount = jumpTime - 1;
         }
         if (jumpPressed && isGround)
         {
+            JumpDeal();
+        }
+        else if (jumpPressed && jumpCount > 0)
+        {
+            JumpDeal();
+        }
+            
+    }
+    void JumpDeal()
+    {
             SoundPlay("jumpSound");
             isJump = true;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpCount--;
             jumpPressed = false;
-        }
-        else if (jumpPressed && jumpCount > 0 && isJump)
-        {
-            SoundPlay("jumpSound");
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            jumpCount--;
-            jumpPressed = false;
-        }
     }
     //玩家受伤
     public void GetHit(float dam, float force, Vector2 dir, Vector2 hitpos)

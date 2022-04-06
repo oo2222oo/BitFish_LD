@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f708760aa80910242a076135c374e59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhp: 100
+  maxhp: 200
   body: {fileID: 4190045213020758628, guid: c7a6279c6f6b26a4989658b23358b44e, type: 3}
   deathEffect: {fileID: 7387250115265126552, guid: 39651c81ff2542945b237e877fd30fca, type: 3}
   damage: 5
