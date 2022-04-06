@@ -60,6 +60,7 @@ MonoBehaviour:
   - {fileID: 2386993908758860043}
   Reset_Time_set: 15
   Reset_Time: 0
+  spawnEffect: {fileID: 7387250115265126552, guid: 39651c81ff2542945b237e877fd30fca, type: 3}
 --- !u!1 &1382797160845953517
 GameObject:
   m_ObjectHideFlags: 0

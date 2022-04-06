@@ -31,6 +31,15 @@ public class Enemy_1_Controller : MonoBehaviour
         {
             GroundMovement();
         }
+        else
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player)
+            {
+                horizontalMove = Mathf.Sign(player.transform.position.x - transform.position.x);
+                transform.localScale = new Vector3(horizontalMove, 1, 1);
+            }
+        }
     }
     void GroundMovement()
     {

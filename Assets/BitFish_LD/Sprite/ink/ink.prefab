@@ -80,7 +80,7 @@ Animator:
   m_GameObject: {fileID: 6221170057757669178}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 30b6266a93186b44194024bd7db7f169, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4bad65b1df8db82489c692b1ec90a797, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
   canHurt: 1
   isAttack: 0
   canPersue: 0
-  weaponObj: {fileID: 0}
+  weaponObj: {fileID: 6495862077586894126}
   tempUpdate: 0
 --- !u!1 &9132646166699957582
 GameObject:
@@ -271,6 +271,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8667456268182114997}
     m_Modifications:
+    - target: {fileID: 7818421611944503164, guid: d0101049a56703f42af86428a3ff9802, type: 3}
+      propertyPath: damage.Array.data[2]
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 7818421611944503165, guid: d0101049a56703f42af86428a3ff9802, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -326,6 +330,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7818421611944503165, guid: d0101049a56703f42af86428a3ff9802, type: 3}
   m_PrefabInstance: {fileID: 3937673488580414034}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6495862077586894126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7818421611944503164, guid: d0101049a56703f42af86428a3ff9802, type: 3}
+  m_PrefabInstance: {fileID: 3937673488580414034}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828a59c3a26a06343aa75605b85c76f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4347612981059207449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -333,6 +348,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8667456268182114997}
     m_Modifications:
+    - target: {fileID: 1364236743798388616, guid: f8fed4d475f4cb14a93608a02c9c2a06, type: 3}
+      propertyPath: damage.Array.data[0]
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1364236743798388616, guid: f8fed4d475f4cb14a93608a02c9c2a06, type: 3}
+      propertyPath: damage.Array.data[1]
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1364236743798388622, guid: f8fed4d475f4cb14a93608a02c9c2a06, type: 3}
       propertyPath: m_Name
       value: Weapon_Blade
