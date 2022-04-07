@@ -9,6 +9,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject Hobby_UI;
 
     public List<Weapon_Bar_Script> Weapon_Bar;
+    public int Weapon_Count;
 
     void Start()
     {
