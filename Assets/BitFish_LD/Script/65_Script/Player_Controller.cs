@@ -281,7 +281,7 @@ public class Player_Controller : MonoBehaviour
     {
         if(other.gameObject.tag == "Item") {
             Item_Spawn_Script v_Scrpit = other.gameObject.transform.parent.GetComponent<Item_Spawn_Script>();
-            v_Scrpit.itemGet_sc();
+            v_Scrpit.itemGet_sc(v_Scrpit.Item_Data);
         }
     }
 
@@ -293,6 +293,7 @@ public class Player_Controller : MonoBehaviour
             Game_Manager_Script.Weapon_loc = nextWeapon;
             Weapon_Data v_weapon_data = (Weapon_Data)UI_Manager.Static.Weapon_Bar[Game_Manager_Script.Weapon_loc].weapon_Data;
             weaponObj = v_weapon_data.Weapon_manager;
+            
             WeaponInit();
         }
     }

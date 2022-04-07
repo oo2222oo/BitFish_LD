@@ -83,7 +83,7 @@ public class Item_Spawn_Script : MonoBehaviour
 
     }
 
-    public void itemGet_sc()
+    public void itemGet_sc(Item_Get_Data Item_Data)
     {
 
         if (Item_Data == null) { return; }
@@ -116,7 +116,7 @@ public class Item_Spawn_Script : MonoBehaviour
                 if (UI_Manager.Static.Weapon_Bar[i].GetComponent<Weapon_Bar_Script>().weapon_Data == null)
                 {
                     UI_Manager.Static.Weapon_Bar[i].weapon_Get(Item_Data);
-                    UI_Manager.Static.Weapon_Count++;
+  
                     break;
                 }
             }
@@ -129,7 +129,6 @@ public class Item_Spawn_Script : MonoBehaviour
                 if (UI_Manager.Static.Weapon_Bar[i].GetComponent<Weapon_Bar_Script>().weapon_Data == null)
                 {
                     UI_Manager.Static.Weapon_Bar[i].weapon_Get(Item_Data);
-                    UI_Manager.Static.Weapon_Count++;
                     break;
                 }
             }

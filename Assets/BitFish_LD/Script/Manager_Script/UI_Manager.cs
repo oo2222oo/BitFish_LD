@@ -11,7 +11,7 @@ public class UI_Manager : MonoBehaviour
     public List<Weapon_Bar_Script> Weapon_Bar;
     public int Weapon_Count;
 
-    void Start()
+    void Awake()
     {
         Static = gameObject.GetComponent<UI_Manager>();
     }

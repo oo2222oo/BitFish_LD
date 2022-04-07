@@ -10,6 +10,7 @@ public class Weapon_Bar_Script : MonoBehaviour
 
     public void weapon_Get(Item_Get_Data Item_Data)
     {
+        UI_Manager.Static.Weapon_Count++;
         weapon_Data = Item_Data;
         weapon_UI.enabled = true;
         weapon_UI.sprite = Item_Data.Item_Sprite;
