@@ -7,7 +7,7 @@ public class Enemy_1_Controller : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     public Transform turnCheck, turnCheck2;
-    public LayerMask ground;
+    public LayerMask ground, enemy;
     public bool hasGround, hasWall;
     //    private Animator anim;
 
@@ -25,7 +25,7 @@ public class Enemy_1_Controller : MonoBehaviour
     void FixedUpdate()
     {
         hasGround = Physics2D.OverlapCircle(turnCheck.position, 0.1f, ground);
-        hasWall = Physics2D.OverlapCircle(turnCheck2.position, 0.1f, ground);
+        hasWall = Physics2D.OverlapCircle(turnCheck2.position, 0.1f, ground)|| Physics2D.OverlapCircle(turnCheck2.position, 0.1f, enemy);
         if (!hasGround || hasWall) horizontalMove = -horizontalMove;
         if (anim.GetBool("hurting") == false)
         {

@@ -83,7 +83,7 @@ public class Player_Controller : MonoBehaviour
                 canPersue = false;
             }
         }
-        var weaponSwitch = Input.GetAxisRaw("Switch");
+        var weaponSwitch = Mathf.FloorToInt(Input.GetAxisRaw("Switch"));
         if (weaponSwitch != 0)
         {
             Weapon_Change(weaponSwitch);
@@ -285,11 +285,15 @@ public class Player_Controller : MonoBehaviour
         }
     }
 
-    public void Weapon_Change(float dir)    //«–ìQŒ‰∆˜ïr’{”√ﬂ@ÇÄ
+    public void Weapon_Change(int dir)    //«–ìQŒ‰∆˜ïr’{”√ﬂ@ÇÄ
     {
-        Game_Manager_Script.Weapon_loc += (int)dir;
-        Weapon_Data v_weapon_data = (Weapon_Data)UI_Manager.Static.Weapon_Bar[Game_Manager_Script.Weapon_loc].weapon_Data;
-        weaponObj = v_weapon_data.Weapon_manager;
-        WeaponInit();
+        var nextWeapon = (Game_Manager_Script.Weapon_loc + dir + UI_Manager.Static.Weapon_Bar.Count) % UI_Manager.Static.Weapon_Bar.Count;
+        if (UI_Manager.Static.Weapon_Bar[nextWeapon].weapon_Data != null)
+        {
+            Game_Manager_Script.Weapon_loc = nextWeapon;
+            Weapon_Data v_weapon_data = (Weapon_Data)UI_Manager.Static.Weapon_Bar[Game_Manager_Script.Weapon_loc].weapon_Data;
+            weaponObj = v_weapon_data.Weapon_manager;
+            WeaponInit();
+        }
     }
 }

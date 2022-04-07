@@ -181,7 +181,7 @@ MonoBehaviour:
   - {x: 0.5, y: -1}
   - {x: 1, y: 0}
   - {x: 1, y: 0}
-  animation: {fileID: 9100000, guid: 4bad65b1df8db82489c692b1ec90a797, type: 2}
+  animController: {fileID: 9100000, guid: 4bad65b1df8db82489c692b1ec90a797, type: 2}
 --- !u!1 &7818421612835758746
 GameObject:
   m_ObjectHideFlags: 0

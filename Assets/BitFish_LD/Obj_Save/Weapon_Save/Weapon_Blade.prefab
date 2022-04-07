@@ -166,8 +166,8 @@ MonoBehaviour:
   - {fileID: 1364236743975768264}
   attackTime: 3
   damage:
-  - 20
-  - 20
+  - 25
+  - 25
   - 50
   knockBack:
   - 200
@@ -181,7 +181,7 @@ MonoBehaviour:
   - {x: 1, y: 0}
   - {x: 1, y: 0}
   - {x: 1, y: 0}
-  animation: {fileID: 9100000, guid: 4000f6bf89d1ef146b4f47bbbd750716, type: 2}
+  animController: {fileID: 9100000, guid: 4000f6bf89d1ef146b4f47bbbd750716, type: 2}
 --- !u!1 &1364236743975768270
 GameObject:
   m_ObjectHideFlags: 0
