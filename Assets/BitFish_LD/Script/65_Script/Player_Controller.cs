@@ -83,7 +83,7 @@ public class Player_Controller : MonoBehaviour
                 canPersue = false;
             }
         }
-        var weaponSwitch = Mathf.FloorToInt(Input.GetAxisRaw("Switch"));
+        var weaponSwitch = -Mathf.FloorToInt(Input.GetAxisRaw("Switch"));
         if (weaponSwitch != 0)
         {
             Weapon_Change(weaponSwitch);
