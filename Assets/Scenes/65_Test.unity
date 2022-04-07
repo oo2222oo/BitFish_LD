@@ -182,14 +182,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5498087126737139992, guid: 6ffaf31a45178b746ab37c98a2c2f4cb, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 62.200012
-      objectReference: {fileID: 0}
-    - target: {fileID: 5498087126737139992, guid: 6ffaf31a45178b746ab37c98a2c2f4cb, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1.2999878
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ffaf31a45178b746ab37c98a2c2f4cb, type: 3}
 --- !u!1 &475352560
@@ -258,6 +250,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &521600454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6495862077586894124, guid: 3873b02a257f8fa42895be709b708824, type: 3}
+  m_PrefabInstance: {fileID: 896125745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &521600455
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521600454}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4bad65b1df8db82489c692b1ec90a797, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &599100393
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,10 +439,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5924832275783612520, guid: 1c8ac3fb63e0b444d810e4a94c9dc23a, type: 3}
-      propertyPath: maxhp
-      value: 120
-      objectReference: {fileID: 0}
     - target: {fileID: 8987975189815502086, guid: 1c8ac3fb63e0b444d810e4a94c9dc23a, type: 3}
       propertyPath: m_Name
       value: Enemy_2
@@ -1030,21 +1042,13 @@ PrefabInstance:
       value: ink
       objectReference: {fileID: 0}
     - target: {fileID: 6495862077586894126, guid: 3873b02a257f8fa42895be709b708824, type: 3}
-      propertyPath: damage.Array.data[2]
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495862078606991639, guid: 3873b02a257f8fa42895be709b708824, type: 3}
-      propertyPath: m_Size.x
-      value: 3.1109428
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495862078606991639, guid: 3873b02a257f8fa42895be709b708824, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.54628325
-      objectReference: {fileID: 0}
-    - target: {fileID: 6495862078606991639, guid: 3873b02a257f8fa42895be709b708824, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.21616268
-      objectReference: {fileID: 0}
+      propertyPath: Animation
+      value: 
+      objectReference: {fileID: 521600455}
+    - target: {fileID: 6495862077586894126, guid: 3873b02a257f8fa42895be709b708824, type: 3}
+      propertyPath: animation
+      value: 
+      objectReference: {fileID: 1118052775}
     - target: {fileID: 8667456268182114997, guid: 3873b02a257f8fa42895be709b708824, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1148,6 +1152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7e2dcfe3e35b3c4b883a6bc18e75a7d, type: 3}
+--- !u!95 &1118052775 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4039026406485739838, guid: 3873b02a257f8fa42895be709b708824, type: 3}
+  m_PrefabInstance: {fileID: 896125745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1353897486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1202,10 +1211,6 @@ PrefabInstance:
     - target: {fileID: 2254051469338728894, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3586404201816786124, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}
-      propertyPath: maxhp
-      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}

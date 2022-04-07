@@ -8,6 +8,7 @@ public class Weapon_Manager : MonoBehaviour
     public int attackTime;
     public List<float> damage, knockBack, attackForce;
     public List<Vector2> knockDir;
+    public RuntimeAnimatorController animController;
     // Start is called before the first frame update
     void Awake()
     {
