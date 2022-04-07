@@ -126,6 +126,7 @@ public class Player_Controller : MonoBehaviour
     }
     void WeaponInit()
     {
+        if (weaponObj == null) { return; }
         Weapon_Manager weapon = weaponObj;
         attackRange = weapon.attackRange;
         attackTime = weapon.attackTime;
@@ -292,8 +293,11 @@ public class Player_Controller : MonoBehaviour
         {
             Game_Manager_Script.Weapon_loc = nextWeapon;
             Weapon_Data v_weapon_data = (Weapon_Data)UI_Manager.Static.Weapon_Bar[Game_Manager_Script.Weapon_loc].weapon_Data;
-            weaponObj = v_weapon_data.Weapon_manager;
+            if (weaponObj != null) { Destroy(weaponObj.gameObject); }
             
+            weaponObj = v_weapon_data.Weapon_manager;
+
+            weaponObj=Instantiate(v_weapon_data.Weapon_manager.gameObject,transform).GetComponent<Weapon_Manager>();
             WeaponInit();
         }
     }

@@ -11,7 +11,7 @@ public class Item_Manager : MonoBehaviour
     public static Item_Manager Static;
 
     [LabelText("開局武器")]
-    public Weapon_Data Start_Weapon;
+    public Weapon_Data Start_Weapon, Next_Weapon;
 
     [LabelText("道具列表")]
     public List<Item_Get_Data> Item_List = new List<Item_Get_Data>();
@@ -35,7 +35,8 @@ public class Item_Manager : MonoBehaviour
 
     void Start()
     {
-        UI_Manager.Static.Weapon_Bar[0].weapon_Get(Start_Weapon); 
-
+        UI_Manager.Static.Weapon_Bar[0].weapon_Get(Start_Weapon);
+        UI_Manager.Static.Weapon_Bar[1].weapon_Get(Next_Weapon);
+        Game_Manager_Script.Player.GetComponent<Player_Controller>().Weapon_Change(0);
     }
 }
