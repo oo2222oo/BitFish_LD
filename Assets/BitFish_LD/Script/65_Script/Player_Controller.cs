@@ -147,8 +147,26 @@ public class Player_Controller : MonoBehaviour
         Collider2D[] attackCollide = new Collider2D[20];
         int collideNum = attackRange[attackRound - 1].OverlapCollider(filter, attackCollide);
         bool hit = false;
-        for(int i = 0; i < collideNum; i++)
+        List<GameObject> hitid = new List<GameObject>();
+        for (int i = 0; i < collideNum; i++)
         {
+            bool hasHit = false;
+            for (int j = 0; j < hitid.Count; j++)
+            {
+                if (attackCollide[i].gameObject == hitid[j])
+                {
+                    hasHit = true;
+                    break;
+                }
+            }
+            if (hasHit)
+            {
+                break;
+            }
+            else
+            {
+                hitid.Add(attackCollide[i].gameObject);
+            }
             var hitdir = knockDir[attackRound - 1].normalized * new Vector2(Mathf.Sign(attackCollide[i].transform.position.x - transform.position.x), 1);
             if (attackCollide[i].tag == "Enemy")
             {
