@@ -288,11 +288,15 @@ public class Player_Controller : MonoBehaviour
 
     public void Weapon_Change(int dir)    //«–ìQŒ‰∆˜ïr’{”√ﬂ@ÇÄ
     {
+
         var nextWeapon = (Game_Manager_Script.Weapon_loc + dir + UI_Manager.Static.Weapon_Count) % UI_Manager.Static.Weapon_Count;
         if (UI_Manager.Static.Weapon_Bar[nextWeapon].weapon_Data != null)
         {
+            UI_Manager.Static.Weapon_Bar[Game_Manager_Script.Weapon_loc].bar_xsc = 1;
             Game_Manager_Script.Weapon_loc = nextWeapon;
-            Weapon_Data v_weapon_data = (Weapon_Data)UI_Manager.Static.Weapon_Bar[Game_Manager_Script.Weapon_loc].weapon_Data;
+            Weapon_Bar_Script v_weapon_bar = UI_Manager.Static.Weapon_Bar[Game_Manager_Script.Weapon_loc];
+            Weapon_Data v_weapon_data = (Weapon_Data)v_weapon_bar.weapon_Data;
+            v_weapon_bar.bar_xsc = 1.2f;
             if (weaponObj != null) { Destroy(weaponObj.gameObject); }
             
             weaponObj = v_weapon_data.Weapon_manager;

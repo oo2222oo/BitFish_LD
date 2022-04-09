@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon_Data: {fileID: 0}
   weapon_UI: {fileID: 4636223316156604119}
+  bar_xsc: 0
 --- !u!1 &2070277894623662025
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon_Data: {fileID: 0}
   weapon_UI: {fileID: 2267608115477798699}
+  bar_xsc: 0
 --- !u!1 &2306639571250075975
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon_Data: {fileID: 0}
   weapon_UI: {fileID: 9136216531984421482}
+  bar_xsc: 0
 --- !u!1 &2697178191968761090
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon_Data: {fileID: 0}
   weapon_UI: {fileID: 1651461638238016201}
+  bar_xsc: 0
 --- !u!1 &3262240097500162741
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon_Data: {fileID: 0}
   weapon_UI: {fileID: 5174861247080800693}
+  bar_xsc: 0
 --- !u!1 &3285183585375987812
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,6 +926,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon_Data: {fileID: 0}
   weapon_UI: {fileID: 2772382701795728185}
+  bar_xsc: 0
 --- !u!1 &4680437666982343522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,6 +1276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon_Data: {fileID: 0}
   weapon_UI: {fileID: 1817522519643561227}
+  bar_xsc: 0
 --- !u!1 &8024188762178482196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,6 +1368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon_Data: {fileID: 0}
   weapon_UI: {fileID: 2512905558410178113}
+  bar_xsc: 0
 --- !u!1 &8276215754342223691
 GameObject:
   m_ObjectHideFlags: 0

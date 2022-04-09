@@ -250,30 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &521600454 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6495862077586894124, guid: 3873b02a257f8fa42895be709b708824, type: 3}
-  m_PrefabInstance: {fileID: 896125745}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &521600455
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 521600454}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4bad65b1df8db82489c692b1ec90a797, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &599100393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1013,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1120742453, guid: 3873b02a257f8fa42895be709b708824, type: 3}
+      propertyPath: weaponObj
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6221170057757669178, guid: 3873b02a257f8fa42895be709b708824, type: 3}
       propertyPath: m_Name
       value: ink
@@ -1044,7 +1024,7 @@ PrefabInstance:
     - target: {fileID: 6495862077586894126, guid: 3873b02a257f8fa42895be709b708824, type: 3}
       propertyPath: Animation
       value: 
-      objectReference: {fileID: 521600455}
+      objectReference: {fileID: 0}
     - target: {fileID: 6495862077586894126, guid: 3873b02a257f8fa42895be709b708824, type: 3}
       propertyPath: animation
       value: 
@@ -1295,6 +1275,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 58351093430584776, guid: 2cbcf943c7ea8854295a61744c505d93, type: 3}
+      propertyPath: Next_Weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 6297c6fee77b4164799a55cddbd91ad6, type: 2}
+    - target: {fileID: 58351093430584776, guid: 2cbcf943c7ea8854295a61744c505d93, type: 3}
+      propertyPath: Start_Weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 37af1cb8641474340a72b815686c5f27, type: 2}
     - target: {fileID: 3151383576615846446, guid: 2cbcf943c7ea8854295a61744c505d93, type: 3}
       propertyPath: m_RootOrder
       value: 8

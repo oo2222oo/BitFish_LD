@@ -308,6 +308,7 @@ MonoBehaviour:
   - {fileID: 7776394952375744396}
   - {fileID: 4350471130856385599}
   - {fileID: 1101738886560623491}
+  Weapon_Count: 0
 --- !u!1 &3446154253573211490
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,10 +467,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3446154252293362732}
     m_Modifications:
-    - target: {fileID: 4172603674282451982, guid: bc30f50cea2025c428408c49fb681aed, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.49996948
-      objectReference: {fileID: 0}
     - target: {fileID: 5440891615160646693, guid: bc30f50cea2025c428408c49fb681aed, type: 3}
       propertyPath: m_Name
       value: Weapon_bar_Canvas

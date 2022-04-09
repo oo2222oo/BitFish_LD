@@ -85,7 +85,7 @@ public class Item_Spawn_Script : MonoBehaviour
 
     public void itemGet_sc(Item_Get_Data Item_Data)
     {
-
+        Debug.Log(Item_Data);
         if (Item_Data == null) { return; }
         if (Item_Data.Item_Type == Item_Get_Data.Eunm_Type.Item)
         {
@@ -134,7 +134,7 @@ public class Item_Spawn_Script : MonoBehaviour
             }
         }
         Debug.Log("“ìµ½ÁË");
-        Item_Data = null;
+        this.Item_Data = null;
         gameObject.SetActive(false);
     }
 
