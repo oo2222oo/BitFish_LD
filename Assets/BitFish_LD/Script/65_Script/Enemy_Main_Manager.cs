@@ -10,6 +10,7 @@ public class Enemy_Main_Manager : MonoBehaviour
     private float nowhp;
     public GameObject body,deathEffect;
     public float damage,knockback;
+    public string deathSound;
     private float[] alarm = new float[3];
     private bool isHurt;
     // Start is called before the first frame update
@@ -30,7 +31,10 @@ public class Enemy_Main_Manager : MonoBehaviour
             anim.SetBool("hurting", false);
         }
     }
-
+    void SoundPlay(string snd)
+    {
+        Sound_Manager.Sound.Play(snd);
+    }
     //µ–»À ‹…À
     public void GetHit(float dam, float force, Vector2 dir)
     {
@@ -45,6 +49,7 @@ public class Enemy_Main_Manager : MonoBehaviour
             var rbd = bd.GetComponent<Rigidbody2D>();
             rbd.AddForce(dir * force);
             Instantiate(deathEffect, transform.position, Quaternion.identity);
+            SoundPlay(deathSound);
             Destroy(gameObject);
         }
     }

@@ -44,6 +44,48 @@ TextureImporter:
   - first:
       213: -3319496259478335831
     second: dogworm2_13
+  - first:
+      213: -2891444249083704088
+    second: sprenemy_3_0
+  - first:
+      213: 8105024468115990213
+    second: sprenemy_3_1
+  - first:
+      213: 1786382471939129074
+    second: sprenemy_3_2
+  - first:
+      213: 839449313634189227
+    second: sprenemy_3_3
+  - first:
+      213: 7723060107341738879
+    second: sprenemy_3_4
+  - first:
+      213: 4536240910922507439
+    second: sprenemy_3_5
+  - first:
+      213: 5298172581175863878
+    second: sprenemy_3_6
+  - first:
+      213: -3160768985994076188
+    second: sprenemy_3_7
+  - first:
+      213: 8162258459005968588
+    second: sprenemy_3_8
+  - first:
+      213: 3571495178799831152
+    second: sprenemy_3_9
+  - first:
+      213: 3195113280225610776
+    second: sprenemy_3_10
+  - first:
+      213: -4236615773643098415
+    second: sprenemy_3_11
+  - first:
+      213: 58544393441830481
+    second: sprenemy_3_12
+  - first:
+      213: -9137670455103987593
+    second: sprenemy_3_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -110,7 +152,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,7 +164,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,7 +176,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -145,7 +187,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dogworm2_0
+      name: sprenemy_3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -159,14 +201,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da39e98a10d449770800000000000000
-      internalID: 8616596656585872301
+      spriteID: 8ec058566c68fd7d0800000000000000
+      internalID: -2891444249083704088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogworm2_1
+      name: sprenemy_3_1
       rect:
         serializedVersion: 2
         x: 128
@@ -180,14 +222,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c4f97e99b63d79d0800000000000000
-      internalID: -2775001624534715200
+      spriteID: 5c627edbfc4da7070800000000000000
+      internalID: 8105024468115990213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogworm2_2
+      name: sprenemy_3_2
       rect:
         serializedVersion: 2
         x: 256
@@ -201,14 +243,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe0e3140eee7d4e10800000000000000
-      internalID: 2183540955080286447
+      spriteID: 2fe7ae0c4618ac810800000000000000
+      internalID: 1786382471939129074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogworm2_3
+      name: sprenemy_3_3
       rect:
         serializedVersion: 2
         x: 384
@@ -222,14 +264,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3021a9ecd63d6b260800000000000000
-      internalID: 7113105130049376771
+      spriteID: baf7c1204b256ab00800000000000000
+      internalID: 839449313634189227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogworm2_4
+      name: sprenemy_3_4
       rect:
         serializedVersion: 2
         x: 512
@@ -243,14 +285,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ebafe1020dc11fa0800000000000000
-      internalID: -5831654633961968663
+      spriteID: f733815cf32dd2b60800000000000000
+      internalID: 7723060107341738879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogworm2_5
+      name: sprenemy_3_5
       rect:
         serializedVersion: 2
         x: 640
@@ -264,14 +306,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1becb45708f590cf0800000000000000
-      internalID: -285592096032960847
+      spriteID: fa4612f0317f3fe30800000000000000
+      internalID: 4536240910922507439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogworm2_6
+      name: sprenemy_3_6
       rect:
         serializedVersion: 2
         x: 768
@@ -285,14 +327,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26b7b843df36c3e80800000000000000
-      internalID: -8197567282561713310
+      spriteID: 64aa3b344e3e68940800000000000000
+      internalID: 5298172581175863878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogworm2_7
+      name: sprenemy_3_7
       rect:
         serializedVersion: 2
         x: 0
@@ -306,14 +348,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c8e89185f7e05320800000000000000
-      internalID: 2544788831091615945
+      spriteID: 4ef50cc8a51b224d0800000000000000
+      internalID: -3160768985994076188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogworm2_8
+      name: sprenemy_3_8
       rect:
         serializedVersion: 2
         x: 128
@@ -327,14 +369,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 42937bfc69b1ecff0800000000000000
-      internalID: -14043414291597020
+      spriteID: cc06afda2da264170800000000000000
+      internalID: 8162258459005968588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogworm2_9
+      name: sprenemy_3_9
       rect:
         serializedVersion: 2
         x: 256
@@ -348,14 +390,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1c60df7271bcdf40800000000000000
-      internalID: 5754669529201404957
+      spriteID: 078526941ff709130800000000000000
+      internalID: 3571495178799831152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogworm2_10
+      name: sprenemy_3_10
       rect:
         serializedVersion: 2
         x: 384
@@ -369,14 +411,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61d19ac2b8db25010800000000000000
-      internalID: 1176210858144505110
+      spriteID: 81c0bf49992575c20800000000000000
+      internalID: 3195113280225610776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogworm2_11
+      name: sprenemy_3_11
       rect:
         serializedVersion: 2
         x: 512
@@ -390,14 +432,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bc1903b8b41fe9a0800000000000000
-      internalID: -6201715378355626826
+      spriteID: 1d6bf2286648435c0800000000000000
+      internalID: -4236615773643098415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogworm2_12
+      name: sprenemy_3_12
       rect:
         serializedVersion: 2
         x: 640
@@ -411,14 +453,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbf66fb377c38dba0800000000000000
-      internalID: -6064030415449591877
+      spriteID: 156e0bec0ddffc000800000000000000
+      internalID: 58544393441830481
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogworm2_13
+      name: sprenemy_3_13
       rect:
         serializedVersion: 2
         x: 768
@@ -432,8 +474,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ae4e8c4db7cee1d0800000000000000
-      internalID: -3319496259478335831
+      spriteID: 770e1f07229703180800000000000000
+      internalID: -9137670455103987593
       vertices: []
       indices: 
       edges: []

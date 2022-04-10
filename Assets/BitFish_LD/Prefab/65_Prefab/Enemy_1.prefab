@@ -199,6 +199,7 @@ MonoBehaviour:
   deathEffect: {fileID: 7387250115265126552, guid: 39651c81ff2542945b237e877fd30fca, type: 3}
   damage: 5
   knockback: 300
+  deathSound: enemy1Death
 --- !u!70 &6735744690118025379
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

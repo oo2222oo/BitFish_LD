@@ -31,6 +31,7 @@ public class Enemy_2_Controller : MonoBehaviour
             {
                 alarm[0] = attackcd;
                 anim.SetBool("attacking", true);
+                Sound_Manager.Sound.Play("enemy2Attack");
                 rb.AddForce(new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y).normalized * speed);
             }
             if (rb.velocity.magnitude < 1f && alarm[0]<attackcd-0.1f)

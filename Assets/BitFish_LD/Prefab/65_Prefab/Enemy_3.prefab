@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2601817437553987072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.706, y: -0.815, z: 0}
+  m_LocalPosition: {x: 0.774, y: -0.855, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9216289366095449985}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8310911185856199508}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.288, y: -0.204, z: 0}
+  m_LocalPosition: {x: 1.284, y: -0.173, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9216289366095449985}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 6976773676514475516}
   - component: {fileID: 5864916080177681139}
   - component: {fileID: 4457162427712206492}
-  - component: {fileID: 7760072458105914559}
+  - component: {fileID: 2432121803624559201}
   m_Layer: 0
   m_Name: Enemy_3
   m_TagString: Enemy
@@ -139,12 +139,12 @@ SpriteRenderer:
   m_SortingLayerID: 127454209
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8616596656585872301, guid: 655beeb2571a2e4499cc629d143467f1, type: 3}
+  m_Sprite: {fileID: -2891444249083704088, guid: 655beeb2571a2e4499cc629d143467f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.125, y: 1.125}
+  m_Size: {x: 2.6666667, y: 1.3333334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -210,8 +210,14 @@ MonoBehaviour:
   enemy:
     serializedVersion: 2
     m_Bits: 128
+  player:
+    serializedVersion: 2
+    m_Bits: 256
+  bullet: {fileID: 8880130902810737323, guid: 689f5559620c58e4ea93d7933543531d, type: 3}
   hasGround: 0
   hasWall: 0
+  isAttack: 0
+  bulletSpeed: 300
   speed: 10
   moveTime: 2
   stopTime: 1
@@ -228,10 +234,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxhp: 200
-  body: {fileID: 5686266134847756148, guid: a335200de6eec6841b7c9c1c6e08a1f7, type: 3}
+  body: {fileID: 995739646946422827, guid: fd699d6cf96c37d4991b250ab7daefd3, type: 3}
   deathEffect: {fileID: 7387250115265126552, guid: 39651c81ff2542945b237e877fd30fca, type: 3}
   damage: 3
   knockback: 300
+  deathSound: enemy3Death
 --- !u!70 &4457162427712206492
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -245,11 +252,11 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.25948152, y: -0.43269113}
-  m_Size: {x: 1.8482552, y: 0.45815676}
+  m_Offset: {x: -0.21100493, y: -0.44518486}
+  m_Size: {x: 1.9227283, y: 0.45412403}
   m_Direction: 1
---- !u!70 &7760072458105914559
-CapsuleCollider2D:
+--- !u!58 &2432121803624559201
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -261,6 +268,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.7936364, y: -0.09077458}
-  m_Size: {x: 0.86931765, y: 0.50148594}
-  m_Direction: 1
+  m_Offset: {x: 0.77688885, y: -0.08663154}
+  serializedVersion: 2
+  m_Radius: 0.246248

@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1120742452}
   - component: {fileID: 1120742453}
   - component: {fileID: 6299917087147646596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ink
   m_TagString: Player
   m_Icon: {fileID: 0}

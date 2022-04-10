@@ -84,7 +84,7 @@ public class Player_Controller : MonoBehaviour
             }
         }
         var weaponSwitch = -Mathf.FloorToInt(Input.GetAxisRaw("Switch"));
-        if (weaponSwitch != 0)
+        if ((Input.GetButtonDown("Switch") || Input.GetAxisRaw("Mouse ScrollWheel") != 0) && !isHurt && !isAttack)
         {
             Weapon_Change(weaponSwitch);
         }
@@ -214,7 +214,7 @@ public class Player_Controller : MonoBehaviour
     void GroundMovement()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");
-        if (Mathf.Abs(horizontalMove) < 0.1f)
+        if (Mathf.Abs(horizontalMove) < 0.3f)
         {
             horizontalMove = 0f;
         }
@@ -276,6 +276,12 @@ public class Player_Controller : MonoBehaviour
     //Íæ¼ÒÊÜÉË
     public void GetHit(float dam, float force, Vector2 dir, Vector2 hitpos)
     {
+        isHurt = true;
+        canHurt = false;
+        anim.SetBool("hurting", true);
+        AttackStop();
+        alarm[0] = 0.5f;
+        alarm[1] = 0.3f;
         SoundPlay("playerHit");
         rb.AddForceAtPosition(dir * force, hitpos);
     }
@@ -283,12 +289,6 @@ public class Player_Controller : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemy" && !isHurt && canHurt)
         {
-            isHurt = true;
-            canHurt = false;
-            anim.SetBool("hurting", true);
-            AttackStop();
-            alarm[0] = 1f;
-            alarm[1] = 0.3f;
             Vector2 vec = transform.position - other.collider.transform.position;
             vec.Normalize();
             Enemy_Main_Manager ec = other.collider.GetComponent<Enemy_Main_Manager>();
