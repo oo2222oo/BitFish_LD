@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxhp: 400
-  body: {fileID: 9156882052162975080, guid: 734ff62decc5786438864ad0762ded46, type: 3}
+  body: {fileID: 5686266134847756148, guid: a335200de6eec6841b7c9c1c6e08a1f7, type: 3}
   deathEffect: {fileID: 7387250115265126552, guid: 39651c81ff2542945b237e877fd30fca, type: 3}
-  damage: 10
+  damage: 20
   knockback: 500
   deathSound: enemy4Death
 --- !u!58 &6306117738068824961

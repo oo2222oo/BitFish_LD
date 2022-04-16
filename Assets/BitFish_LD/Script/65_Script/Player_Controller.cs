@@ -9,6 +9,7 @@ public class Player_Controller : MonoBehaviour
     private Animator anim;
     private Cinemachine.CinemachineImpulseSource cis;
 
+    public float maxHealth;
     public float speed, jumpForce;
     public int jumpTime;
     public List<float> damage, knockBack, attackForce;
@@ -32,6 +33,8 @@ public class Player_Controller : MonoBehaviour
     void Awake()
     {
         Game_Manager_Script.Player = gameObject;
+        Game_Manager_Script.Player_HP_Max = maxHealth;
+        Game_Manager_Script.Player_HP = maxHealth;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         Alarm.AlarmInit(alarm);
@@ -144,28 +147,31 @@ public class Player_Controller : MonoBehaviour
         rb.AddForce(new Vector2(transform.localScale.x, 0) * attackForce[attackRound - 1]);
         var filter = new ContactFilter2D();
         filter.useTriggers = true;
-        Collider2D[] attackCollide = new Collider2D[20];
+        Collider2D[] attackCollide = new Collider2D[100];
         int collideNum = attackRange[attackRound - 1].OverlapCollider(filter, attackCollide);
         bool hit = false;
-        List<GameObject> hitid = new List<GameObject>();
+        List<int> hitid = new List<int>();
         for (int i = 0; i < collideNum; i++)
         {
-            bool hasHit = false;
-            for (int j = 0; j < hitid.Count; j++)
+            if (attackCollide[i].tag == "Enemy" || attackCollide[i].tag == "Body")
             {
-                if (attackCollide[i].gameObject == hitid[j])
+                bool hasHit = false;
+                for (int j = 0; j < hitid.Count; j++)
                 {
-                    hasHit = true;
+                    if (attackCollide[i].gameObject.GetInstanceID() == hitid[j])
+                    {
+                        hasHit = true;
+                        break;
+                    }
+                }
+                if (hasHit)
+                {
                     break;
                 }
-            }
-            if (hasHit)
-            {
-                break;
-            }
-            else
-            {
-                hitid.Add(attackCollide[i].gameObject);
+                else
+                {
+                    hitid.Add(attackCollide[i].gameObject.GetInstanceID());
+                }
             }
             var hitdir = knockDir[attackRound - 1].normalized * new Vector2(Mathf.Sign(attackCollide[i].transform.position.x - transform.position.x), 1);
             if (attackCollide[i].tag == "Enemy")
@@ -222,6 +228,7 @@ public class Player_Controller : MonoBehaviour
         {
             horizontalMove = Mathf.Sign(horizontalMove);
         }
+        /*
         dashMove = Input.GetAxisRaw("Dash");
         if (dashMove == 1 && alarm[3]<=0)
         {
@@ -232,10 +239,10 @@ public class Player_Controller : MonoBehaviour
             rb.velocity = new Vector2(horizontalMove * speed * 3, rb.velocity.y);
         }
         else
-        {
-            rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
-        }
-
+        {*/
+        rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+        //}
+        
         if (horizontalMove != 0f)
         {
             transform.localScale = new Vector3(horizontalMove, 1, 1);
@@ -284,6 +291,8 @@ public class Player_Controller : MonoBehaviour
         alarm[1] = 0.3f;
         SoundPlay("playerHit");
         rb.AddForceAtPosition(dir * force, hitpos);
+        Game_Manager_Script.Player_HP -= dam;
+        Game_Manager_Script.Hobby_bar -= 2;
     }
     private void OnCollisionStay2D(Collision2D other)
     {

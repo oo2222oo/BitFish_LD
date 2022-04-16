@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1206159676556256983}
   - component: {fileID: 5206265312761298131}
   - component: {fileID: 3767557128217705215}
+  - component: {fileID: 581753862}
   m_Layer: 0
   m_Name: Hobby_UI
   m_TagString: Untagged
@@ -66,15 +67,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 7718214077910111717, guid: 957796fc17210bd4cbee04c8765ba248, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &581753862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554818675719058769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3411c69007c737740972f83c851381c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1778560460192197111
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +321,7 @@ MonoBehaviour:
   - {fileID: 7776394952375744396}
   - {fileID: 4350471130856385599}
   - {fileID: 1101738886560623491}
+  maxHobby: 100
   Weapon_Count: 0
 --- !u!1 &3446154253573211490
 GameObject:
@@ -320,6 +334,7 @@ GameObject:
   - component: {fileID: 3446154253573211491}
   - component: {fileID: 3446154253573211489}
   - component: {fileID: 3446154253573211488}
+  - component: {fileID: 10176834}
   m_Layer: 0
   m_Name: HP_UI
   m_TagString: Untagged
@@ -375,15 +390,27 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 134086666222474253, guid: 957796fc17210bd4cbee04c8765ba248, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &10176834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3446154253573211490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5614923499542a34f884a9ac05fa6e65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7664068723352135125
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +481,7 @@ MonoBehaviour:
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0

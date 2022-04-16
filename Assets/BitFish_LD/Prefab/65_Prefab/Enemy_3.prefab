@@ -236,7 +236,7 @@ MonoBehaviour:
   maxhp: 200
   body: {fileID: 995739646946422827, guid: fd699d6cf96c37d4991b250ab7daefd3, type: 3}
   deathEffect: {fileID: 7387250115265126552, guid: 39651c81ff2542945b237e877fd30fca, type: 3}
-  damage: 3
+  damage: 7
   knockback: 300
   deathSound: enemy3Death
 --- !u!70 &4457162427712206492

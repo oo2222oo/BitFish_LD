@@ -142,7 +142,7 @@ MonoBehaviour:
   maxhp: 120
   body: {fileID: 9156882052162975080, guid: 734ff62decc5786438864ad0762ded46, type: 3}
   deathEffect: {fileID: 7387250115265126552, guid: 39651c81ff2542945b237e877fd30fca, type: 3}
-  damage: 3
+  damage: 7
   knockback: 200
   deathSound: enemy2Death
 --- !u!114 &4159272313875737242

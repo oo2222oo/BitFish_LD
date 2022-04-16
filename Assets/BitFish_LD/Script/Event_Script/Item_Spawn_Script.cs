@@ -64,14 +64,6 @@ public class Item_Spawn_Script : MonoBehaviour
         while (v_ok)
         {
             v_ok = true;
-            if (v_item.Item_ID == "Item3")
-            {
-                if(Game_Manager_Script.Player_Firerate >= 0.5f) { v_ok = false; }
-            }
-            if (v_item.Item_ID == "Item4")
-            {
-                if (Game_Manager_Script.Player_Movespeed >= 0.5f) { v_ok = false; }
-            }
             if (!v_ok)
             {
                 v_item = Item_Manager.Static.Item_List[Random.Range(0, Item_Manager.Static.Item_List.Count-1)];

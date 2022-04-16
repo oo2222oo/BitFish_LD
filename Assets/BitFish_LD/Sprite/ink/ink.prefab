@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f3fa18aa4442e4486f575ce546d1cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   speed: 5
   jumpForce: 20
   jumpTime: 2

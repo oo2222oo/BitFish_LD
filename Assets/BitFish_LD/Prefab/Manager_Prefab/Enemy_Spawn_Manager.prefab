@@ -45,3 +45,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawn_Spawn_time: 1
   time: 1
+  ground:
+    serializedVersion: 2
+    m_Bits: 64
+  Upgrade_Time: 60
+  enemy:
+  - {fileID: 2254051469338728866, guid: 29ff2ddecbda7ec4485208979424358a, type: 3}
+  - {fileID: 8987975189815502086, guid: 1c8ac3fb63e0b444d810e4a94c9dc23a, type: 3}
+  - {fileID: 9216289366095450013, guid: f9c909dc6275d68459184f831530895c, type: 3}
+  - {fileID: 3788112750908037526, guid: 02a05f3d001932e4ca55c1e189d93289, type: 3}

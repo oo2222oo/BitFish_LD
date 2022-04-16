@@ -54,7 +54,11 @@ public class Enemy_3_Controller : MonoBehaviour
     {
         hasGround = Physics2D.OverlapCircle(turnCheck.position, 0.1f, ground);
         hasWall = Physics2D.OverlapCircle(turnCheck2.position, 0.1f, ground) || Physics2D.OverlapCircle(turnCheck2.position, 0.1f, enemy);
-        if (!hasGround || hasWall) horizontalMove = -horizontalMove;
+        if ((!hasGround || hasWall) && alarm[1] <= 0)
+        {
+            alarm[1] = 1f;
+            horizontalMove = -horizontalMove;
+        }
         if (anim.GetBool("hurting") == false)
         {
             if(!isAttack)
