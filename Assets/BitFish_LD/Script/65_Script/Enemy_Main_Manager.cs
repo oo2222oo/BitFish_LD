@@ -50,9 +50,9 @@ public class Enemy_Main_Manager : MonoBehaviour
             rbd.AddForce(dir * force);
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             SoundPlay(deathSound);
-            Game_Manager_Script.Player_HP += maxhp / 20;
+            Game_Manager_Script.Player_HP += maxhp / 40;
             if (Game_Manager_Script.Player_HP > Game_Manager_Script.Player_HP_Max) Game_Manager_Script.Player_HP = Game_Manager_Script.Player_HP_Max;
-            Game_Manager_Script.Hobby_bar += maxhp / 20;
+            Game_Manager_Script.Hobby_bar += maxhp / 40;
             Destroy(gameObject);
         }
     }

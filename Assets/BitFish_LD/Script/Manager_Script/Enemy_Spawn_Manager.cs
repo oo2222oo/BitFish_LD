@@ -32,6 +32,7 @@ public class Enemy_Spawn_Manager : MonoBehaviour
             if (enemyType < 4)
             {
                 enemyType++;
+                Spawn_Spawn_time -= 1f;
             }
         }
         time -= Time.deltaTime;

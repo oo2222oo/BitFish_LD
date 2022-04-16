@@ -77,32 +77,23 @@ public class Item_Spawn_Script : MonoBehaviour
 
     public void itemGet_sc(Item_Get_Data Item_Data)
     {
-        Debug.Log(Item_Data);
+        Game_Manager_Script.Hobby_bar += 10;
         if (Item_Data == null) { return; }
         if (Item_Data.Item_Type == Item_Get_Data.Eunm_Type.Item)
         {
-            /*
             if (Item_Data.Item_ID == "Item1")
             {
 
                 Game_Manager_Script.Player_Damage += Item_Manager.Static.Item1_Damge_Mul;
+                Debug.Log("Damage+");
             }
             if (Item_Data.Item_ID == "Item2")
             {
                 Game_Manager_Script.Player_HP_Max += Item_Manager.Static.Item2_HP;
                 Game_Manager_Script.Player_HP += Item_Manager.Static.Item2_HP;
+                Debug.Log("HP+");
             }
-            if (Item_Data.Item_ID == "Item3")
-            {
-                Game_Manager_Script.Player_Firerate += Item_Manager.Static.Item3_Firerate;
-                if (Game_Manager_Script.Player_Firerate > 0.5f) { Game_Manager_Script.Player_Firerate = 0.5f; }
-            }
-            if (Item_Data.Item_ID == "Item4")
-            {
-                Game_Manager_Script.Player_Movespeed += Item_Manager.Static.Item4_Movespeed;
-                if (Game_Manager_Script.Player_Movespeed > 0.5f) { Game_Manager_Script.Player_Movespeed = 0.5f; }
-            }
-            */
+            /*
             for (int i = 0; i < UI_Manager.Static.Weapon_Bar.Count; i++)
             {
                 if (UI_Manager.Static.Weapon_Bar[i].GetComponent<Weapon_Bar_Script>().weapon_Data == null)
@@ -112,6 +103,7 @@ public class Item_Spawn_Script : MonoBehaviour
                     break;
                 }
             }
+            */
         }
 
         if (Item_Data.Item_Type == Item_Get_Data.Eunm_Type.Weapon)
@@ -125,7 +117,7 @@ public class Item_Spawn_Script : MonoBehaviour
                 }
             }
         }
-        Debug.Log("撿到了");
+        //Debug.Log("撿到了");
         this.Item_Data = null;
         gameObject.SetActive(false);
     }

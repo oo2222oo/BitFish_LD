@@ -35,6 +35,7 @@ public class Player_Controller : MonoBehaviour
         Game_Manager_Script.Player = gameObject;
         Game_Manager_Script.Player_HP_Max = maxHealth;
         Game_Manager_Script.Player_HP = maxHealth;
+        Game_Manager_Script.Player_Damage = 1;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         Alarm.AlarmInit(alarm);
@@ -120,10 +121,22 @@ public class Player_Controller : MonoBehaviour
         }
         else
         {
-            if (Mathf.Abs(rb.velocity.x)+ Mathf.Abs(rb.velocity.y) < 2f && alarm[1]<=0)
+            if (Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.y) < 2f && alarm[1] <= 0)
             {
-                anim.SetBool("hurting", false);
-                isHurt = false;
+
+                if (Game_Manager_Script.Player_HP <= 0)
+                {
+                    alarm[0] = 0;
+                    alarm[1] = 0;
+                    anim.SetBool("dying", true);
+                    rb.mass *= 10;
+                }
+                else
+                {
+                    anim.SetBool("hurting", false);
+                    isHurt = false;
+
+                }
             }
         }
     }
@@ -178,7 +191,7 @@ public class Player_Controller : MonoBehaviour
             {
                 hit = true;
                 Enemy_Main_Manager ec = attackCollide[i].GetComponent<Enemy_Main_Manager>();
-                ec.GetHit(damage[attackRound - 1], knockBack[attackRound - 1], hitdir);
+                ec.GetHit(damage[attackRound - 1] * Game_Manager_Script.Player_Damage, knockBack[attackRound - 1], hitdir);
             }
             if(attackCollide[i].tag == "Body")
             {
