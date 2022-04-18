@@ -10,7 +10,7 @@ public class Player_Controller : MonoBehaviour
     private Cinemachine.CinemachineImpulseSource cis;
 
     public float maxHealth;
-    public float speed, jumpForce;
+    public float speed, jumpForce, level;
     public int jumpTime;
     public List<float> damage, knockBack, attackForce;
     private float horizontalMove,dashMove;
@@ -147,6 +147,7 @@ public class Player_Controller : MonoBehaviour
         attackRange = weapon.attackRange;
         attackTime = weapon.attackTime;
         damage = weapon.damage;
+        level = weapon.level;
         knockBack = weapon.knockBack;
         attackForce = weapon.attackForce;
         knockDir = weapon.knockDir;
@@ -191,7 +192,8 @@ public class Player_Controller : MonoBehaviour
             {
                 hit = true;
                 Enemy_Main_Manager ec = attackCollide[i].GetComponent<Enemy_Main_Manager>();
-                ec.GetHit(damage[attackRound - 1] * Game_Manager_Script.Player_Damage, knockBack[attackRound - 1], hitdir);
+                ec.GetHit(damage[attackRound - 1] * Game_Manager_Script.Player_Damage * level, knockBack[attackRound - 1], hitdir);
+                Debug.Log(damage[attackRound - 1] * Game_Manager_Script.Player_Damage * level);
             }
             if(attackCollide[i].tag == "Body")
             {

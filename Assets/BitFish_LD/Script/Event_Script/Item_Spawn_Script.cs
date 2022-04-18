@@ -12,7 +12,8 @@ public class Item_Spawn_Script : MonoBehaviour
     public float Distance;  //距離
     public GameObject Show_UI;  //顯示位置的UI
     public GameObject Item_obj; //道具
-    
+    public bool canWeapon; //是不是武器
+
 
     public void Start()
     {
@@ -50,7 +51,7 @@ public class Item_Spawn_Script : MonoBehaviour
             Distance =Vector2.Distance(Game_Manager_Script.Player.transform.position,transform.position);
             //道具消失
             Destroy_time -= Time.deltaTime;
-            if (Destroy_time <= 0) { 
+            if (Destroy_time <= 0 && Item_Data.Item_Type == Item_Get_Data.Eunm_Type.Item) { 
                 Item_Data = null;
                 gameObject.SetActive(false);
             }
@@ -61,13 +62,12 @@ public class Item_Spawn_Script : MonoBehaviour
     {
         if (v_item == null) { v_item = Item_Manager.Static.Item_List[Random.Range(0, Item_Manager.Static.Item_List.Count-1)]; }
         bool v_ok=false;
-        while (v_ok)
+        while (!v_ok)
         {
             v_ok = true;
-            if (!v_ok)
-            {
-                v_item = Item_Manager.Static.Item_List[Random.Range(0, Item_Manager.Static.Item_List.Count-1)];
-            }
+            v_item = Item_Manager.Static.Item_List[Random.Range(0, Item_Manager.Static.Item_List.Count-1)];
+            if (v_item.Item_Type == Item_Get_Data.Eunm_Type.Weapon && !canWeapon) v_ok = false;
+            if (v_item.Item_Type == Item_Get_Data.Eunm_Type.Item && canWeapon) v_ok = false;
         }
         Item_Data = v_item;
         Destroy_time = Des_time;
@@ -77,7 +77,9 @@ public class Item_Spawn_Script : MonoBehaviour
 
     public void itemGet_sc(Item_Get_Data Item_Data)
     {
+        canWeapon = false;
         Game_Manager_Script.Hobby_bar += 10;
+        if (Game_Manager_Script.Hobby_bar > Game_Manager_Script.Hobby_bar_Max) Game_Manager_Script.Hobby_bar = Game_Manager_Script.Hobby_bar_Max;
         if (Item_Data == null) { return; }
         if (Item_Data.Item_Type == Item_Get_Data.Eunm_Type.Item)
         {
@@ -110,8 +112,17 @@ public class Item_Spawn_Script : MonoBehaviour
         {
             for (int i = 0; i < UI_Manager.Static.Weapon_Bar.Count; i++)
             {
+                if(UI_Manager.Static.Weapon_Bar[i].GetComponent<Weapon_Bar_Script>().weapon_Data == Item_Data)
+                {
+                    Weapon_Data wd = (Weapon_Data)UI_Manager.Static.Weapon_Bar[i].GetComponent<Weapon_Bar_Script>().weapon_Data;
+                    Debug.Log(wd.Item_ID);
+                    wd.Weapon_manager.level += 0.2f;
+                    break;
+                }
                 if (UI_Manager.Static.Weapon_Bar[i].GetComponent<Weapon_Bar_Script>().weapon_Data == null)
                 {
+                    Weapon_Data wd = (Weapon_Data)Item_Data;
+                    wd.Weapon_manager.level = 1f;
                     UI_Manager.Static.Weapon_Bar[i].weapon_Get(Item_Data);
                     break;
                 }

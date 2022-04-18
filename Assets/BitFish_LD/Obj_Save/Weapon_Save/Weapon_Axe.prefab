@@ -177,6 +177,7 @@ MonoBehaviour:
   - 50
   - 75
   - 200
+  level: 1
   knockDir:
   - {x: 0.5, y: -1}
   - {x: 1, y: 0}

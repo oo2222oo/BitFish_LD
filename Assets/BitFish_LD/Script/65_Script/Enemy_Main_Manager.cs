@@ -53,6 +53,7 @@ public class Enemy_Main_Manager : MonoBehaviour
             Game_Manager_Script.Player_HP += maxhp / 40;
             if (Game_Manager_Script.Player_HP > Game_Manager_Script.Player_HP_Max) Game_Manager_Script.Player_HP = Game_Manager_Script.Player_HP_Max;
             Game_Manager_Script.Hobby_bar += maxhp / 40;
+            if (Game_Manager_Script.Hobby_bar > Game_Manager_Script.Hobby_bar_Max) Game_Manager_Script.Hobby_bar = Game_Manager_Script.Hobby_bar_Max;
             Destroy(gameObject);
         }
     }

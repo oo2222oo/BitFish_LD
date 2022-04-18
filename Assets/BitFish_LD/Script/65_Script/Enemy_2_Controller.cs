@@ -27,7 +27,7 @@ public class Enemy_2_Controller : MonoBehaviour
         Alarm.AlarmSet(alarm);
         if (anim.GetBool("hurting") == false && target)
         {
-            if (alarm[0] < 0)
+            if (alarm[0] < 0 && Vector2.Distance(transform.position,Game_Manager_Script.Player.transform.position)<10f)
             {
                 alarm[0] = attackcd;
                 anim.SetBool("attacking", true);

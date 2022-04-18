@@ -110,6 +110,7 @@ MonoBehaviour:
   - 1200
   attackForce:
   - 200
+  level: 1
   knockDir:
   - {x: 0.5, y: 0.5}
   animController: {fileID: 9100000, guid: 30b6266a93186b44194024bd7db7f169, type: 2}

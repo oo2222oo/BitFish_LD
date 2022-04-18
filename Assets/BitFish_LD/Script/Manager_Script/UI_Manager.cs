@@ -25,6 +25,6 @@ public class UI_Manager : MonoBehaviour
     void Update()
     {
         Game_Manager_Script.Hobby_bar -= Time.deltaTime * timeCount;
-        timeCount += Time.deltaTime * 0.001f;
+        timeCount += Time.deltaTime * 0.002f;
     }
 }
